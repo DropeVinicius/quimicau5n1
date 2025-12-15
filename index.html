@@ -1,0 +1,4142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Script do MathJax no <head> -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    
+    <title>Nivelamento - Quimica Nivel 1 - Unidade 5</title>
+
+    <style>
+         /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .titulo-programa {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .titulo-materia {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 133px;
+            color: #003974;
+            font-weight: lighter;
+        }
+
+        .subtitulo-professor {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 59px;
+            color: #0058B4;
+            font-weight: lighter;
+        }
+
+        .titulo-unidade {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 60px;
+        }
+
+        .titulo-saiba-mais {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 70px;
+        }
+        /* Estilização de Bebas Neue FIM */
+
+
+        /* Estilização de Roboto INICIO */
+        .peso-1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 45px;
+        }
+
+        .texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 35px;
+        }
+
+        .sub-texto {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .titulo-box {
+            font-family: 'Roboto', sans-serif;
+            font-size: 32px;
+        }
+
+        .fonte {
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+        }
+
+        .citacao {
+            font-family: 'Roboto', sans-serif;
+            font-size: 30px;
+            font-style: italic;
+        }
+        /* Estilização de Roboto FIM */
+
+        /* Navbar styles INICIO */
+        .navbar {
+            background-color: #9F43BE;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            position: -webkit-sticky; /* Para navegadores antigos */
+            position: sticky; /* Para manter no topo durante o scroll */
+            top: 0; /* Faz com que a navbar fique no topo */
+            z-index: 10; /* Garante que o menu fique acima de outros elementos */
+            transition: background-color 0.3s ease; /* Transição suave para o efeito */
+        }
+
+        .navbar .logo img {
+            height: 50px;/* Ajuste conforme necessário */
+            width: auto;
+        }
+
+        .navbar .menu-toggle {
+            cursor: pointer;
+            font-size: 1.5em;
+            display: block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: none;
+            flex-direction: column;
+            background-color: #9f43be;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+            z-index: 10; /* Garante que o menu esteja acima de outros elementos */
+        }
+
+        .navbar ul.show {
+            display: flex;
+        }
+
+        .navbar ul li {
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #003974; /* Cor ao passar o mouse */
+        }
+        .navbar .menu-toggle i:last-child {
+            display: none; /* Esconde o ícone de fechar inicialmente */
+        }
+        
+
+         /* Navbar styles FIM */
+
+        /* Titulo styles INICIO */
+        .titulo-intro {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .titulo-intro h1 {
+            margin: 0;
+            padding: 15px;
+        }
+        /* Titulo styles FIM */
+
+        /* Estilo da Capa do Livro INICIO*/
+        .capa-livro {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden; /* Para evitar que o pseudoelemento saia do container */
+            border-top: 3px solid #003974;
+            border-bottom: 3px solid #003974;
+        }
+
+        .capa-livro::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://res.cloudinary.com/di4ria1pf/image/upload/v1761845452/207385370_m_qovbgr.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.40; /* Controle da opacidade */
+            z-index: -1; /* Coloca o background atrás do conteúdo */
+        }
+
+        
+
+        .capa-livro .conteudo-capa {
+            text-align: center;
+            color: white;
+            padding: 20px; /* Espaço interno para o texto */
+        }
+
+        .capa-livro .titulo-materia {
+            font-size: 80px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 0;
+        }
+
+        .capa-livro .subtitulo-professor {
+            font-size: 40px;
+            font-family: 'Bebas Neue', cursive;
+            margin: 10px 0 0;
+        }
+        /* Estilo da Capa do Livro FIM*/
+
+        /* Barra Superior */
+        .barra-superior {
+            background-color: #015A42; /* Cor verde escuro */
+            width: 100%;
+            padding: 15px 15px;
+            text-align: center;
+            box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura */
+            overflow-x: hidden; /* Previne rolagem horizontal */
+        }
+
+        .barra-superior .titulo-barra {
+            font-family: 'Bebas Neue', cursive;
+            color: #FFF; /* Cor branca */
+            font-size: 50px;
+            font-weight: lighter;
+            margin: 0;
+        }
+
+        /* Conteúdo da Introdução */
+        .introducao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            overflow-x: hidden; /* Impede rolagem horizontal */
+        }
+        
+        .introducao .titulo-introducao {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #015A42; /* Cor verde */
+            margin: 10px auto 10px auto;
+        }
+
+        .introducao .caixa-texto {
+            width: 100%;
+            background-color: #E2F4EB; /* Verde mais claro */
+            padding: 64px 0;
+        }
+                /* Conteúdo centralizado dentro da faixa */
+        .introducao .conteudo-centralizado {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Parágrafos da introdução */
+        .introducao .conteudo-centralizado p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* RESPONSIVIDADE SEÇÕES ACIMA*/
+        /* Capa do Livro - Responsividade */
+        @media (max-width: 768px) {
+            .capa-livro {
+                height: 70vh; /* Reduz a altura da capa */
+            }
+            .capa-livro::before {
+                background-position: center center; /* centraliza melhor no mobile */
+            }
+            .capa-livro .titulo-materia {
+                font-size: 40px; /* Reduz o tamanho do título */
+            }
+
+            .capa-livro .subtitulo-professor {
+                font-size: 24px; /* Reduz o tamanho do subtítulo */
+            }
+            .capa-livro .titulo-programa {
+                font-size: 18px;
+            }
+            .capa-livro .conteudo-capa {
+                padding: 15px; /* Ajusta o padding para telas menores */
+            }
+        }   
+            /* Seção Introdução - Responsividade */
+        @media (max-width: 768px) {
+            .barra-superior {
+                padding: 10px; /* Reduz o padding da barra */
+            }
+
+            .barra-superior .titulo-barra {
+                font-size: 1.6rem;
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 30px;
+                text-align: left;
+            }
+
+            .introducao .titulo-introducao {
+                font-size: 2.8rem; /* Reduz o tamanho do título da introdução */
+                margin-top: 20px; /* Ajusta o espaçamento superior */
+            }
+
+            .introducao .caixa-texto {
+                padding: 20px; /* Reduz o padding da caixa de texto */
+                width: 100%; /* Ajusta a largura da caixa */
+            }
+
+            .introducao .caixa-texto p {
+                font-size: 1rem; /* Reduz o tamanho do texto */
+                line-height: 1.4;
+                margin-bottom: 10px; /* Ajusta a margem entre os parágrafos */
+            }
+            .introducao .conteudo-centralizado {
+                max-width: 800px;
+                margin: 10px 0;
+                padding: 0 40px;
+            }
+        }
+        /* Responsividade para o título da seção de Programa */
+        @media (max-width: 768px) {
+            .titulo-programa {
+                font-size: 50px; /* Ajuste do tamanho do título */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-programa {
+                font-size: 35px; /* Ajuste para telas muito pequenas */
+            }
+        }
+
+        /* Estilo base da seção */
+        .secao1 .conteudo-secao {
+            width: 100% !important;
+            padding: 64px 0 !important; /* padding vertical conforme solicitado */
+            box-sizing: border-box !important;
+        }
+        .secao1 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .secao1 .tabs-section {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        /* Estilo base da seção */
+        .secao1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #9f43be11;
+            padding: 20px;
+        }
+        .secao1 .outer-container-alt {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao1 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao1 .faixa-verde {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao1 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao1 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao1 p {
+            font-size: 19px;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;    
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 1rem;
+            }
+            .secao1 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao1 .faixa-verde .titulo-secao {
+                font-size: 20px;
+            }
+
+            .secao1 p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Estilo base da seção */
+        .secao2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+        }
+        .secao2 .conteudo-secao {
+            width: 100%;
+            padding: 64px 0;
+            box-sizing: border-box;
+        }
+        .secao2 .acordeon-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 10px auto;
+        }
+       .secao2 .outer-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+       }
+        /* Imagem de topo */
+        .secao2 .imagem-topo {
+            width: 100%;
+            height: auto;
+            max-height: 290px; /* ajuste essa altura conforme necessário */
+            object-fit: cover; /* garante que a imagem preencha sem distorcer */
+            display: block;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF;
+        }
+
+        /* Faixa verde */
+        .secao2 .faixa-verde {
+            width: 100%;
+            background-color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .secao2 .faixa-verde .titulo-secao {
+            font-size: 25px;
+            font-family: 'Roboto', sans-serif;
+            color: #015A42; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        .secao2 .titulo-verde {
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
+            color: #3a95a6; /* Cor verde */
+            width: 90%;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+        }
+        /* Parágrafo padrão */
+        .secao2 p {
+            font-size: 19px;
+            font-family: 'Roboto', sans-serif;
+            text-align: justify;
+            line-height: 1.6;
+            color: #333;
+            margin: 10px auto;
+            width: 90%;
+            max-width: 800px;
+                 
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 30px;
+            }
+
+            .secao2 p {
+                font-size: 1rem;
+            }
+            .secao2 .imagem-topo {
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .secao2 .faixa-verde .titulo-secao {
+                font-size: 24px;
+            }
+
+            .secao2 p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Acordeon styles */
+        .acordeon-container {
+            margin-top: 20px;
+            width: 90%; /* Ajuste de largura */
+            max-width: 800px; /* Limite máximo */
+        }
+
+        .acordeon {
+            border-radius: 10px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .acordeon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3a95a6;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .acordeon-headerb {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #015A42;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerc {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #9F43BE;
+            color: #FFF;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-headerd {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #134969; /* exemplo: laranja suave */
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .acordeon-content {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #3a95a6;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentb {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #015A42;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentc {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; /* Remove padding para que o header toque no conteúdo */
+            border: 2px solid #9F43BE;
+            border-radius: 0 0 10px 10px; /* Apenas canto inferior arredondado */
+        }
+
+        .acordeon-contentd {
+            display: none;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            padding-top: 0; 
+            border: 2px solid #134969; /* mesma cor da header para consistência */
+            border-radius: 0 0 10px 10px; 
+        }
+
+        .acordeon-content p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentb p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .acordeon-contentc h4 {
+            text-align: center;
+
+        }
+        .acordeon-contentd p {
+            margin: 20px auto;
+            font-size: 16px;
+        }
+        .tituloacordeonverde{
+            color: #015A42;
+        }
+            /* Estilo do ícone da seta */
+        .acordeon-icon {
+            font-size: 40px;
+            transition: transform 0.3s ease; /* Para rotação suave */
+        }
+            
+            /* Rotação da seta para cima */
+        .acordeon-header.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerb.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+        /* Rotação da seta para cima */
+        .acordeon-headerc.active .acordeon-icon {
+            transform: rotate(180deg); /* Gira a seta para cima */
+        }
+                /* Ícone giratório */
+        .acordeon-headerd.active .acordeon-icon {
+            transform: rotate(180deg);
+        }
+        /* Responsividade para telas menores */
+        @media (max-width: 768px) {
+            .acordeon-header {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerb {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+
+            .acordeon-headerc {
+                font-size: 20px; /* Reduzir tamanho do texto */
+                padding: 12px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 30px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 14px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 10px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 15px; /* Ajustar margem para menor espaçamento */
+            }
+            .acordeon-headerd {
+                font-size: 20px;
+                padding: 12px;
+            }
+
+            .acordeon-contentd {
+                font-size: 14px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd p {
+                margin: 15px;
+            }
+        }
+        /* Responsividade para telas menores ainda (480px) */
+        @media (max-width: 480px) {
+            .acordeon-header {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-content {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-content p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+            .acordeon-headerb {
+                font-size: 16px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentb {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentb p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 19px;
+            }
+
+            .acordeon-headerc {
+                font-size: 14px; /* Reduz ainda mais o tamanho do texto */
+                padding: 10px; /* Ajustar espaçamento */
+            }
+
+            .acordeon-icon {
+                font-size: 25px; /* Reduzir tamanho do ícone */
+            }
+
+            .acordeon-contentc {
+                font-size: 13px; /* Reduzir tamanho do texto do conteúdo */
+                padding: 8px; /* Reduzir espaçamento interno */
+            }
+
+            .acordeon-contentc p {
+                margin: 10px; /* Ajustar margem para menor espaçamento */
+                font-size: 1rem;
+            }
+            .acordeon-headerd {
+                font-size: 16px;
+                padding: 10px;
+            }
+
+            .acordeon-contentd {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .acordeon-contentd p {
+                margin: 10px;
+                font-size: 19px;
+            }
+        }
+            /* Acordeon styles FIM */
+
+            .quadro-problema {
+            max-width: 800px;
+            width: 95%; /* adapta o quadro à tela menor */
+            margin: 20px auto;
+            border: 2px solid #015A42;
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: 'Roboto', sans-serif;
+            box-sizing: border-box;
+        }
+
+        .quadro-problema .topo {
+            background-color: #ffffff;
+            padding: 10px;
+            
+        }
+
+        .quadro-problema .resolucao {
+            background-color: #E2F4EB;
+            padding: 10px;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .quadro-problema h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .quadro-problema p {
+            line-height: 1.6;
+            font-size: 16px;
+            margin: 20px auto;
+        }
+
+        .quadro-problema code {
+            background-color: #d9f0e1;
+            padding: 2px 4px;
+            border-radius: 20px;
+            font-family: monospace;
+        }
+        /* Estilos para cálculos matemáticos extensos */
+        .math-equation-container {
+            width: 100%;
+            overflow-x: auto;
+            padding: 10px 0;
+            margin: 10px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .math-equation-container mjx-container {
+            min-width: fit-content;
+        }
+
+        /* Scroll personalizado para equações */
+        .math-equation-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-thumb {
+            background: #9F43BE;
+            border-radius: 3px;
+        }
+
+        .math-equation-container::-webkit-scrollbar-thumb:hover {
+            background: #8a32a9;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            .math-equation-container {
+                padding: 8px 0;
+                margin: 8px 0;
+            }
+            
+            .resolucao p {
+                font-size: 0.95rem;
+                line-height: 1.4;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .math-equation-container {
+                padding: 6px 0;
+                margin: 6px 0;
+            }
+            
+            .resolucao p {
+                font-size: 0.9rem;
+            }
+        }
+        .figura-container-reduzida {
+            text-align: center; /* centraliza a imagem */
+            margin: 15px 0; /* espaço acima e abaixo da imagem */
+        }
+
+        .figura-container-reduzida img {
+            max-width: 85%; /* imagem ocupa a largura total no mobile */
+            height: auto; /* mantém proporção */
+            border-radius: 4px; /* opcional, suaviza bordas */
+        }
+        
+        /* ===== RESPONSIVIDADE ===== */
+        @media (max-width: 768px) {
+            .quadro-problema {
+                width: 90%;
+                font-size: 15px;
+            }
+
+            .quadro-problema p {
+                font-size: 15px;
+                line-height: 1.5;
+            }
+
+            .figura-container-reduzida img {
+                max-width: 100%; /* imagem se ajusta completamente */
+            }
+
+            .quadro-problema .resolucao {
+                padding: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quadro-problema {
+                width: 95%;
+                border-width: 1.5px;
+            }
+
+            .quadro-problema p {
+                font-size: 14px;
+            }
+
+            .figura-container-reduzida img {
+                max-width: 100%;
+            }
+        }
+        .resolucao .item-recuado {
+            display: block;
+            padding-left: 25px !important;
+            position: relative;
+        }
+
+        .resolucao .item-recuado::before {
+            position: absolute;
+            left: 10px;   /* posição do ponto */
+            top: 0;
+            font-weight: bold;
+        }
+
+        .slider-texto-container {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            border: 2px solid #3a95a6;
+            padding: 20px 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            background-color: #FFF;
+            border-radius: 8px;
+        }
+        .slider-texto-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .slide-texto {
+            display: none;
+            flex-shrink: 0;
+            width: 100%;
+            text-align: center;
+            word-break: keep-all;
+            white-space: normal;
+            
+        }
+
+        .slide-texto.ativo {
+            display: block;
+        }
+
+        /* Container de imagens dentro do slide */
+        .slide-imagens {
+            display: flex;
+            flex-direction: column; /* padrão: empilha vertical */
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px; /* espaçamento interno para não colar nas bordas */
+            box-sizing: border-box;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-imagens-maiores .slider-img {
+            max-width: 400px;  /* aumenta o tamanho */
+            max-height: 400px;
+        }
+                /* Apenas para slides com imagens maiores */
+        .slide-com-tres-imagens .slider-img {
+            max-width: 300px;  /* aumenta o tamanho */
+            max-height: 300px;
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+                        /* Apenas para slides com imagens maiores */
+            .slide-com-imagens-maiores .slider-img {
+                max-width: 200px;  /* aumenta o tamanho */
+                max-height: 200px;
+            }
+                /* Apenas para slides com imagens maiores */
+            .slide-com-tres-imagens .slider-img {
+                max-width: 150px;  /* aumenta o tamanho */
+                max-height: 150px;
+            }
+        }
+
+        /* Apenas slides que possuem colunas */
+        .slide-imagens.colunas {
+            display: flex;
+            flex-direction: row; /* colunas lado a lado */
+            justify-content: center; /* centraliza colunas no slide */
+            gap: 20px; /* espaço entre colunas */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        
+        /* Colunas individuais */
+        .coluna-imagem {
+            display: flex;
+            flex-direction: column; /* empilha imagens dentro da coluna */
+            gap: 10px; /* espaço entre imagens */
+            align-items: center; /* centraliza horizontalmente */
+            justify-content: center; /* centraliza verticalmente dentro da coluna */
+            flex: 1; /* cada coluna ocupa largura proporcional igual */
+        }
+
+        /* Responsividade: telas menores empilham colunas */
+        @media (max-width: 768px) {
+            .slide-imagens.colunas {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        /* Imagens zoomable pequenas */
+        .slider-img {
+            max-width: 250px; /* ajuste o tamanho desejado */
+            max-height: 250px;
+            cursor: pointer; /* indica que pode ser clicada */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .slider-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .titulo-texto {
+            color: #b9e5a9;
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif;
+            width: 100%;
+        }
+
+        .conteudo-texto {
+            font-size: 16px !important;
+            color: #333 !important;
+            font-family: 'Roboto', sans-serif !important;
+            width: 100%;
+            margin: 0 auto;
+            word-break: normal;
+            white-space: normal;
+            text-align: center !important;
+        }
+        .titulo-texto,
+        .conteudo-texto {
+            word-break: break-word;
+            white-space: normal;
+        }
+        .seta-texto {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            font-size: 30px;
+            color: #3a95a6;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .seta-texto.esquerda {
+            left: 0;
+        }
+
+        .seta-texto.direita {
+            right: 0;
+        }
+
+    @media (max-width: 768px) {
+        .titulo-texto {
+            font-size: 20px;
+        }
+
+        .conteudo-texto {
+            font-size: 18px;
+        }
+
+        .seta-texto {
+            font-size: 24px;
+        }
+    }
+        .slider-texto-indicadores {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .dot-texto {
+            height: 12px;
+            width: 12px;
+            margin: 0 6px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot-texto.ativo {
+            background-color: #3a95a6;
+        }
+        /* ------------------- */
+        /* TEMAS DE COR        */
+        /* ------------------- */
+
+        /* Tema verde */
+        .tema-verde {
+            border-color: #92d678;
+        }
+        .tema-verdeborda {
+            border-color: #015A42 !important;
+        }
+        .tema-verde .seta-texto {
+            color: #92d678;
+        }
+        .tema-verde .dot-texto.ativo {
+            background-color: #92d678;
+        }
+
+        /* Tema roxo */
+        .tema-roxo {
+            border-color: #015A42;
+        }
+        .tema-roxo .seta-texto {
+            color: #015A42;
+        }
+        .tema-roxo .dot-texto.ativo {
+            background-color: #015A42;
+        }
+
+        /* Tema roxo */
+        .tema-green {
+            border-color: #9F43BE;
+        }
+        .tema-green .seta-texto {
+            color: #9F43BE;
+        }
+        .tema-green .dot-texto.ativo {
+            background-color: #9F43BE;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .seta-texto { font-size: 24px; }
+            .conteudo-texto { font-size: 18px; }
+        }
+        /* Título centralizado fora do container */
+        .titulo-figura-central {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+            font-weight: normal;
+            margin: 20px auto 15px auto;
+        }
+
+        .titulo-figura-central .figura {
+            color: #015A42; /* verde padrão */
+        }
+
+        .titulo-figura-central .figura::after {
+            content: " ";
+            white-space: pre;
+        }
+
+        /* Bloco de figura simples (sem borda e sem fundo) */
+        .bloco-figura-simples {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0;
+            background: none;
+            border: none;
+            text-align: center;
+        }
+
+        /* Imagem centralizada */
+        .bloco-figura-simples .figura-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .bloco-figura-simples .figura-container img {
+            max-width: 55%;
+            height: auto;
+            display: block;
+        }
+
+        /* Fonte abaixo da imagem */
+        .bloco-figura-simples .fonte-imagem {
+            font-size: 12px;
+            color: #555;
+            text-align: center;
+            margin: 5px auto 12px auto;
+            max-width: 90%;
+        }
+
+        /* Descrição mais larga */
+        .bloco-figura-simples .descricao-figura-larga {
+            font-size: 14px;
+            color: #333;
+            text-align: justify;
+            line-height: 1.8;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .titulo-figura-central {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .bloco-figura-simples .descricao-figura-larga {
+                font-size: 13px;
+                max-width: 100%;
+            }
+        }
+        /* Retângulo de fundo */
+        .background-section {
+            background-color: #015A42; /* Cor de fundo verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            min-height: 450px; /* Altura mínima */
+            width: 90%; /* Largura ajustada à estrutura */
+            max-width: 800px; /* Limite máximo */
+            height: auto; /* Altura do retângulo */
+            margin: 50px auto; /* Espaçamento da seção acima e centralização */
+            position: relative; /* Define o contexto de empilhamento */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .background-section {
+                width: 85%;
+                margin: 50px auto;
+                padding: 20px;
+            }
+        }
+        
+        /* Retângulo transparente (sobreposição) */
+        .transparent-section {
+            background-color: rgba(255, 255, 255, 0.822); /* Tom verde com transparência */
+            border: 2px solid #015A42; /* Borda sólida verde */
+            border-radius: 20px; /* Bordas arredondadas */
+            width: calc(100% - 40px); /* Reduz tamanho para acomodar margens */
+            height: 100%;
+            position: absolute; /* Define posicionamento relativo */
+            top: 20px;
+            left: 20px; 
+            z-index: 1; /* Garante que o retângulo fique sobre o fundo */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional */
+            display: flex; /* Usamos flexbox para alinhar o conteúdo */
+            flex-direction: column; /* Alinha os elementos verticalmente */
+            justify-content: space-evenly; /* Distribui espaço uniformemente */
+            align-items: center; /* Alinha o conteúdo à esquerda */
+            text-align: center; /* Centraliza o texto */
+        }
+        
+        
+                /* Responsividade - Ajuste da largura da transparent-section para telas menores */
+        @media (max-width: 768px) {
+            .transparent-section {
+                width: 90%; /* Diminui a largura da sobreposição */
+                left: 5%; /* Ajusta o posicionamento para centralizar */
+                right: 5%; /* Garante que o elemento ocupe menos espaço na tela */
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+        }
+        /* Círculo verde */
+        .circle-green {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green, .circle-white {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+              /* Retângulo de fundo */
+        .background-section2 {
+            background-color: #015A42 !important;
+            border-radius: 20px !important;
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 30px; /* adiciona espaçamento interno */
+            box-sizing: border-box;
+            height: auto; /* deixa a altura fluir conforme o conteúdo */
+            min-height: unset; /* remove altura mínima fixa */
+        }
+               
+        
+                    /* Retângulo transparente */
+            .transparent-section2 {
+                background-color: rgba(255, 255, 255, 0.9);
+                border: 2px solid #015A42;
+                border-radius: 20px;
+                padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
+                position: relative; /* relativo em vez de absolute */
+                z-index: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 5px; /* espaço natural entre elementos */
+            }
+        
+                @media (max-width: 768px) {
+            .background-section2 {
+                width: 95%;
+                margin: 0 auto;
+                padding: 15px;
+            }
+
+            .transparent-section2 {
+                padding: 15px;
+                gap: 5px;
+            }
+        }
+        
+        /* Círculo verde */
+        .circle-green2 {
+            position: absolute;
+            top: -30px; /* Distância do topo */
+            left: -30px; /* Distância da esquerda */
+            background-color: #015A42; /* Cor verde */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo */
+            height: 120px; /* Tamanho do círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; /* Garantir que fique sobre o fundo */
+        }
+
+        /* Círculo branco sobre o verde */
+        .circle-white2 {
+            position: absolute;
+            top: -4px; /* Eleva o círculo branco para cima */
+            left: -5px; /* Centraliza o círculo branco sobre o verde */
+            background-color: white; /* Cor branca */
+            border-radius: 50%; /* Para garantir que seja redondo */
+            width: 120px; /* Tamanho do círculo branco */
+            height: 120px; /* Tamanho do círculo branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3; /* Coloca o círculo branco sobre o verde */
+        }
+
+        /* Estilizando o ícone dentro do círculo branco */
+        .circle-white2 i {
+            font-size: 80px; /* Tamanho do ícone */
+            color: #015A42; /* Cor verde para o ícone */
+        }
+        /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .circle-green2, .circle-white2 {
+                width: 60px; /* Diminui o tamanho */
+                height: 60px; /* Diminui o tamanho */
+                top: -5px; /* Ajusta o posicionamento */
+                left: -5px; /* Ajusta o posicionamento */
+            }
+
+            .circle-white2 i {
+                font-size: 40px; /* Reduz o ícone */
+            }
+        }
+
+        .learn-more-title {
+            color: #015A42; /* Cor verde */
+            font-size: 50px; /* Tamanho do título */
+            font-weight: lighter;
+            text-align: left;
+            font-family: 'Bebas Neue', sans-serif; /* Fonte Bebas Neue */
+            margin: -25px 0;
+            width: 80%; /* Ocupa toda a largura disponível */
+        }
+        .learn-more-paragraph {
+            font-family: 'Roboto', sans-serif; /* Fonte Roboto */
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; /* Espaçamento entre linhas */
+            color: #000; /* Cor verde */
+            margin: 0px; /* Reduz margens */
+            width: 90%; /* Ocupa toda a largura disponível */
+            word-wrap: break-word;
+        }
+         .learn-more-link {
+            font-family: 'Roboto', sans-serif; 
+            text-align: left;
+            font-size: 17px;
+            line-height: 1.4; 
+            color: #FFF; /* cor do texto */
+            margin: 0px; 
+            width: 90%; 
+            word-wrap: break-word;
+            padding: 5px;
+            background-color: #669e87;
+            cursor: pointer; /* mostra a mãozinha ao passar o mouse */
+            text-decoration: none; /* opcional: simula link */
+            transition: background-color 0.3s, color 0.3s; /* efeito ao passar o mouse */
+        }
+
+
+        .centered-paragraph {
+            text-align: center; /* Centraliza o texto horizontalmente */
+            margin: -5px 0; /* Ajusta a margem para uniformidade */
+            font-size: 17px; /* Mantém o tamanho consistente */
+            line-height: 1.4; /* Controla o espaçamento entre linhas */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .learn-more-title {
+                font-size: 35px; /* Ajusta o tamanho do título */
+                text-align: left;
+            }
+
+            .learn-more-paragraph {
+                font-size: 15px; /* Ajusta o tamanho do texto */
+                line-height: 1.4;
+                text-align: justify; /* Centraliza o texto */
+                margin: 5px 0; /* Reduz margens */
+            }
+        }
+            .outer-background {
+                background-color: #fff; /* Cor de fundo para o contêiner externo */
+        }
+        .play-icon {
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            justify-content: center;
+            align-items: center;
+            background-color: #015A42; /* Fundo verde */
+            color: #FFF; /* Ícone branco */
+            width: 90px; /* Largura do botão */
+            height: 55px; /* Altura do botão */
+            border-radius: 13px;
+            font-size: 40px; /* Tamanho do ícone */
+            cursor: pointer; /* Cursor de clique */
+            transition: transform 0.3s ease; /* Efeito de transição */
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1); /* Aumenta levemente no hover */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .play-icon {
+                width: 60px; /* Diminui a largura */
+                height: 40px; /* Diminui a altura */
+                font-size: 25px; /* Diminui o tamanho do ícone */
+            }
+        }
+        /* Modal - Oculto por padrão */
+        .video-modal {
+            display: none; /* Inicialmente o modal está oculto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+            z-index: 1000; /* Garantir que o modal fique acima de outros conteúdos */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteúdo do modal (onde ficará o vídeo) */
+        .video-content {
+            position: relative;
+            background-color: #015A42;
+            border-radius: 10px;
+            padding: 20px;
+        }
+         
+        /* Responsividade - Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .video-content {
+                max-width: 100%; /* Maximize a largura do modal no mobile */
+                padding: 10px;
+            }
+
+            .video-content iframe {
+                width: 100%; /* O iframe ocupará toda a largura disponível */
+                height: 56.25vw; /* Isso mantém a proporção de 16:9 */
+                max-height: 80vh; /* Evita que o vídeo ultrapasse a tela */
+                border-radius: 10px;
+            }
+        }
+
+        /* Botão de fechar */
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 40px;
+            color: #FFF;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .close-btn:hover {
+            transform: scale(1.2); /* Aumenta levemente no hover */
+            color: #FF0000; /* Muda a cor para vermelho no hover */
+        }
+
+        .play-icon {
+            display: flex; /* Flexbox para centralizar o conteúdo */
+            justify-content: center;
+            align-items: center;
+            background-color: #015A42; /* Fundo verde */
+            color: #FFF; /* Ícone branco */
+            width: 90px; /* Largura do botão */
+            height: 55px; /* Altura do botão */
+            border-radius: 13px;
+            font-size: 40px; /* Tamanho do ícone */
+            cursor: pointer; /* Cursor de clique */
+            transition: transform 0.3s ease; /* Efeito de transição */
+        }
+
+        .play-icon:hover {
+            transform: scale(1.1); /* Aumenta levemente no hover */
+        }
+                /* Responsividade - Ajuste para telas menores */
+        @media (max-width: 768px) {
+            .play-icon {
+                width: 60px; /* Diminui a largura */
+                height: 40px; /* Diminui a altura */
+                font-size: 25px; /* Diminui o tamanho do ícone */
+            }
+        }
+        /* Modal - Oculto por padrão */
+        .video-modal {
+            display: none; /* Inicialmente o modal está oculto */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro transparente */
+            z-index: 1000; /* Garantir que o modal fique acima de outros conteúdos */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Conteúdo do modal (onde ficará o vídeo) */
+        .video-content {
+            position: relative;
+            background-color: #015A42;
+            border-radius: 10px;
+            padding: 20px;
+        }
+         
+        /* Responsividade - Ajustes para dispositivos móveis */
+        @media (max-width: 768px) {
+            .video-content {
+                max-width: 100%; /* Maximize a largura do modal no mobile */
+                padding: 10px;
+            }
+
+            .video-content iframe {
+                width: 100%; /* O iframe ocupará toda a largura disponível */
+                height: 56.25vw; /* Isso mantém a proporção de 16:9 */
+                max-height: 80vh; /* Evita que o vídeo ultrapasse a tela */
+                border-radius: 10px;
+            }
+        }
+
+        /* Botão de fechar */
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            font-size: 40px;
+            color: #FFF;
+            cursor: pointer;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .close-btn:hover {
+            transform: scale(1.2); /* Aumenta levemente no hover */
+            color: #FF0000; /* Muda a cor para vermelho no hover */
+        }
+                /* Container */
+        .video-play-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        /* Botão circular */
+        .video-play-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #2A5255, #12635D); /* Gradiente verde */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            color: #FFF;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            font-size: 55px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* Efeito pulsante */
+        .video-play-btn::after {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 2px solid rgba(1,90,66,0.6);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.6; }
+            70% { transform: scale(1.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        .video-play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Texto abaixo */
+        .video-play-text {
+            margin-top: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            color: #015A42;
+            font-weight: 600;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .video-play-btn {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+            }
+
+            .video-play-btn::after {
+                width: 85px;
+                height: 85px;
+            }
+
+            .video-play-text {
+                font-size: 14px;
+            }
+        }
+        .fundo-transparente {
+            mix-blend-mode: multiply;
+        }
+
+        
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            cursor: grab;
+            overflow: hidden;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* garante que se ajuste à tela inicialmente */
+            transition: transform 0.2s ease;
+            transform-origin: center center;
+            background: linear-gradient(135deg, #ffffff, #f0f0f0);
+        }
+        .lightbox-hint {
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            font-size: 14px;
+            opacity: 0.8;
+            font-family: sans-serif;
+            text-align: center;
+            animation: fadeOut 4s forwards; /* some sozinho */
+        }
+        .zoomable {
+            cursor: zoom-in; /* ícone de lupa ao passar o mouse */
+            transition: transform 0.2s ease;
+        }
+
+        .zoomable:hover {
+            transform: scale(1.02); /* leve efeito de destaque no hover */
+        }
+        @keyframes fadeOut {
+            0% { opacity: 0.8; }
+            80% { opacity: 0.8; }
+            100% { opacity: 0; }
+        }
+                /* Animação suave */
+                @keyframes zoomIn {
+                    from { transform: scale(0.7); opacity: 0; }
+                    to { transform: scale(1); opacity: 1; }
+                }
+
+                 .link-sim {
+            color: #000;              /* texto preto */
+            text-decoration: none;    /* remove o sublinhado */
+            cursor: pointer;          /* indica que é clicável */
+        }
+
+        .link-sim:hover {
+            text-decoration: underline; /* opcional — mostra sublinhado só ao passar o mouse */
+        }
+
+        .download-section {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+            .download-btn {
+                background-color: #9F43BE;
+                color: white;
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 15px;
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.3s ease;
+                font-weight: bold;
+                margin-top: 80px;
+            }
+
+            .download-btn i {
+                font-size: 18px;
+            }
+
+            .download-btn:hover {
+                background-color: #7D3598;
+            }
+                /* ===== Seções de Conclusão e Referências ===== */
+        .conclusao, .referencias {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .conclusao {
+            background-color: #E2F4EB; /* fundo suave */
+        }
+
+        .referencias {
+            background-color: #FFF;
+            border-top: 3px solid #015A42;
+            border-bottom: 3px solid #015A42;
+        }
+
+        /* Títulos */
+        .titulo-conclusao, .titulo-referencias {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 50px;
+            font-weight: lighter;
+            color: #015A42;
+            margin: 10px auto 20px auto;
+            text-align: left; /* garante centralização em desktop */
+        }
+
+        /* Caixas de texto */
+        .conclusao .caixa-texto, 
+        .referencias .caixa-texto {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Parágrafos */
+        .conclusao .caixa-texto p,
+        .referencias .caixa-texto p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 19px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        /* Cores de texto diferentes */
+        .conclusao .caixa-texto p {
+            color: #333;
+        }
+        .referencias .caixa-texto p {
+            color: #000;
+        }
+
+        /* Links em referências */
+        .referencias .caixa-texto a {
+            word-break: break-all;
+            color: #015A42;
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .titulo-conclusao, .titulo-referencias {
+                font-size: 2rem;
+            }
+            .conclusao .caixa-texto p,
+            .referencias .caixa-texto p {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+            .conclusao .caixa-texto, 
+            .referencias .caixa-texto {
+                max-width: 95%;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .titulo-conclusao, .titulo-referencias {
+                font-size: 1.8rem;
+            }
+            .conclusao .caixa-texto, 
+            .referencias .caixa-texto {
+                max-width: 100%;
+                padding: 10px;
+            }
+        }
+
+        /* Estilização do rodapé */
+        .footer {
+            border-top: 3px solid #015A42; /* Borda superior */
+            background-color: #FFFFFF; /* Fundo branco */
+            text-align: center; /* Centralizar texto */
+            padding: 15px 0; /* Espaçamento interno */
+            box-sizing: border-box; /* Inclui padding nas dimensões */
+        }
+
+        .footer p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #015A42; /* Cor do texto */
+            margin: 0; /* Remove espaçamento externo */
+        }
+        /* Texto descritivo */
+        .footer .fonte-menor {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            color: #555; /* Cor neutra */
+            line-height: 1.5; /* Espaçamento entre linhas */
+            display: block; /* Garante quebra para nova linha */
+            margin-top: 10px; /* Espaço entre o texto e o divisor */
+        }
+                /* Divisor */
+        .footer-divider {
+            border: none; /* Remove borda padrão */
+            height: 1px; /* Altura da linha */
+            background-color: #015A42; /* Cor da linha */
+            margin: 10px auto; /* Espaçamento vertical */
+            width: 80%; /* Define a largura do divisor */
+            opacity: 0.5; /* Reduz opacidade para suavizar */
+        }
+                /* Ajustes do rodapé para mobile */
+        @media (max-width: 480px) {
+            .footer p {
+                font-size: 15px; /* Ajusta o tamanho da fonte */
+            }
+            .footer .fonte-menor {
+                font-size: 12px; /* Reduz tamanho da fonte */
+                line-height: 1.4; /* Ajusta o espaçamento */
+            }
+            .footer-divider {
+                width: 100%; /* Ajusta largura do divisor no mobile */
+            }
+        }
+        .logo-final {
+            background-color: #b9e5a92c;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid #015A42;
+        }
+
+        .logo-final img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        /* Nova seção com os títulos ocupando a tela inteira */
+        .ficha-titulos {
+            background-color: #fff;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .ficha-titulos h2,
+        .ficha-titulos h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-weight: lighter;
+            font-size: 40px;
+            color: #0058B4;
+            margin: 10px 0;
+        }
+
+        /* Mantemos a ficha técnica como estava */
+        .ficha-tecnica {
+            background-color: #FFF;
+            padding: 60px 20px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+
+        .ficha-tecnica p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px auto;
+            max-width: 700px;
+        }
+
+        .ficha-tecnica strong {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .paragraforeduzido {
+            font-size: 14px;
+        }
+        /* wrapper: por padrão visível; no mobile vira rolável */
+        .math-mobile-scroll {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        overflow-x: visible;              /* padrão desktop */
+        -webkit-overflow-scrolling: auto;
+        }
+
+        /* aparência do badge (desktop preservado) */
+        .math-badge {
+        display: inline-block;
+        padding: 8px 20px;
+        border: 2px solid #015A42;
+        border-radius: 10px;
+        background: #fff;
+        box-sizing: border-box;
+        }
+
+        /* --- MOBILE: ativa rolagem e força nowrap dentro do wrapper --- */
+        @media (max-width: 600px) {
+        .math-mobile-scroll {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 0 0.5rem;
+        }
+
+        /* badge em uma só linha para rolagem */
+        .math-mobile-scroll .math-badge {
+            white-space: nowrap !important;
+            display: inline-block !important;
+            min-width: max-content !important;
+            max-width: none !important;
+        }
+
+        /* FORÇAR os elementos que MathJax cria a respeitarem nowrap e não limitarem a largura.
+            Isso usa selectors para v2/v3 e aplica !important para garantir prioridade. */
+        .math-mobile-scroll .MathJax,
+        .math-mobile-scroll mjx-container,
+        .math-mobile-scroll .mjx-chtml,
+        .math-mobile-scroll .MathJax_SVG,
+        .math-mobile-scroll .MathJax_Display,
+        .math-mobile-scroll .MathJax_Preview {
+            display: inline-block !important;
+            white-space: nowrap !important;
+            max-width: none !important;
+            overflow: visible !important;
+        }
+
+        /* conforto visual: scrollbar pequena (apenas em WebKit) */
+        .math-mobile-scroll::-webkit-scrollbar { height: 8px; }
+        .math-mobile-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.18);
+            border-radius: 6px;
+        }
+        }
+
+          /* Wrapper universal para expressões longas */
+        .math-wrapper {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            padding-bottom: 4px; /* espaço para o scroll no mobile */
+        }
+
+        /* Impede MathJax de estourar o container */
+        .math-wrapper mjx-container {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://drive.google.com/thumbnail?id=1iZTd5_tOqqVTFtrgbqdKazN1J1Yk-PuE" alt="Logo">
+        </div>
+        <div class="menu-toggle">
+            <i class="bx bx-menu"></i>
+            <i class="bx bx-x" style="display: none;"></i> <!-- Ícone de fechar menu -->
+        </div>
+        <ul>
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#secao1">Tópico 1</a></li>
+            <li><a href="#secao2">Tópico 2</a></li>
+            <li><a href="#secao3">Tópico 3</a></li>
+            <li><a href="#secao4">Tópico 4</a></li>
+            <li><a href="#secao5">Tópico 5</a></li>
+            <li><a href="#secao6">Tópico 6</a></li>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#conclusao">Conclusão</a></li>
+            <li><a href="#referencias">Refs Bibliográficas</a></li>
+        </ul>
+    </div>
+    
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    <!-- Capa do Livro -->
+    <section id="capa-livro" class="capa-livro">
+        <div class="borda superior"></div>
+        <div class="conteudo-capa">
+            <h1 class="titulo-programa">PROGRAMA DE ATUALIZAÇÃO em fundamentos da</h1>
+            <h1 class="titulo-materia">QUÍMICA - NÍVEL 1</h1>
+            <h2 class="subtitulo-professor">Profª Monica Tais Siqueira D'Amelio Felippe</h2>
+        </div>
+        <div class="borda inferior"></div>
+    </section>
+    
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    <section id="titulo" class="titulo-intro">
+        <h1 class="titulo-programa"></h1>
+    </section>
+    <!-- ESPAÇAMENTO -->
+    
+    
+    <!-- Seção Introdução -->
+    <section id="introducao" class="introducao">
+        <!-- Barra Superior -->
+        <div class="barra-superior">
+            <h1 class="titulo-barra">UNIDADE 5 | LIGAÇÕES QUÍMICAS</h1>
+        </div>
+    
+        <!-- Conteúdo -->
+        <div class="caixa-texto">
+            <div class="conteudo-centralizado">
+                <h1 class="titulo-introducao">INTRODUÇÃO</h1>
+                <p>
+                    Você já parou para pensar por que os átomos se unem? O sal de cozinha, a água que bebemos e até o ar
+                    que respiramos são formados por combinações de elementos químicos, por que será que isso acontece?
+                    Neste estudo, vamos conversar sobre as ligações químicas, que são justamente essas uniões entre
+                    átomos com o objetivo de alcançar maior estabilidade. Entender como isso acontece ajuda a compreender
+                    muitos fenômenos da natureza e também do nosso cotidiano.
+                </p>
+                <p>
+                    Ao longo desta unidade, vamos observar que os átomos não estão sozinhos nessa história: eles se ligam
+                    de formas distintas, dependendo da quantidade de elétrons que possuem ou desejam receber. Vamos
+                    conhecer três maneiras principais de se unirem, a ligação iônica, a covalente e a metálica, e ainda aprender
+                    a representar essas interações com ferramentas como a fórmula de Lewis e a regra do octeto. Tudo isso
+                    vai tornar mais claro como as substâncias são formadas e por que elas têm propriedades tão diferentes.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="secao1" id="secao1">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                1. REGRA DO OCTETO
+            </h1>
+        </div>
+        <p>
+            Atualmente, são conhecidos 118 elementos químicos diferentes. Os compostos químicos, contudo, são
+            inumeráveis. Como isso é possível? A resposta é simples: é porque ocorrem ligações entre os diferentes
+            elementos químicos, chamadas Ligações Químicas.
+        </p>
+        <p>
+            O estudo das ligações químicas envolve um conceito muito importante: a <b>Estabilidade Atômica.</b> A união
+            entre dois átomos acontece para que ambos atinjam uma situação de menor energia e, portanto, uma
+            condição mais estável. Entretanto, dois cientistas (Kossel e Lewis) perceberam que um grupo de átomos
+            não se ligava a nenhum outro, eles eram encontrados sempre isolados (Chang, 2010). São eles:
+        </p>
+        <br>
+        <p style="text-align:center;">
+            <span
+                style="text-align: left; line-height: 2.5em; font-size:1rem; display:inline-block; padding:20px 30px; border:2px solid #015A42; border-radius:10px; background-color: #FFF; max-width: 600px; width: 80%;">
+                $$ He (hélio) $$
+                $$ Ne (Neônio) $$
+                $$ Ar (Argônio) $$
+                $$ Kr (Criptônio) $$
+                $$ Xe (Xenônio) $$
+                $$ Ra (Radônio) $$
+            </span>
+        </p>
+        <br>
+        <p>
+            Kossel e Lewes constataram que, à exceção do Hélio, todos estes átomos apresentam <b>8 elétrons na
+            camada de valência</b>. O hélio, por só ter uma camada com apenas um orbital, apresenta sua camada
+            completa. Assim, em 1916, foi estabelecida a <b>Regra do Octeto</b> (Chang, 2010), clique no botão para
+            conhecê-la:
+        </p>
+
+        <br>
+        <!-- Acordeons -->
+        <div class="acordeon-container">
+            <!-- Primeiro acordeon -->
+            <div class="acordeon">
+                <div class="acordeon-headerc">
+                    REGRA DO OCTETO
+                    <i class="bx bx-chevron-down acordeon-icon"></i>
+                </div>
+                <div class="acordeon-contentc">
+                    <p>
+                        Segundo a Regra do Octeto, um átomo atinge sua estabilidade quando possui 8 elétrons
+                        na camada de valência (e 2 quando sua camada for apenas a camada K).
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p>
+            Como os compostos apresentados anteriormente estão no estado gasoso à temperatura ambiente, e
+            como não se relacionavam com outros elementos químicos, foram denominados de <b>Gases Nobres</b> (Both,
+            2018).
+        </p>
+        <p>
+            Diz-se que um átomo atingiu sua estabilidade quando atinge condição semelhante à dos gases nobres: <b>8
+            elétrons na última camada</b>. Para isso, um átomo se une a outro por meio de uma ligação química para
+            atingir 8 elétrons na última camada.
+        </p>
+        <p>
+            Existem 3 tipos de ligações químicas: <b>Ligação Iônica, Ligação Covalente</b> e <b>Ligação Metálica</b> (Batista,
+            s.d.). Vamos estudar cada uma delas. Mas antes, vamos aprender sobre a representação pela fórmula de
+            Lewis que vai ajudar a identificar qual ligação química irá ocorrer.
+        </p>
+    </section>
+    <section class="secao2" id="secao2">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                2. FÓRMULA DE LEWIS
+            </h1>
+        </div>
+        <p>
+            Lewis desenvolveu uma técnica para representar os elétrons da camada de valência. Primeiro, faz-se a
+            <b>distribuição eletrônica</b> (Rozenberg, 2002). Veja a seguir:
+        </p>
+        <br>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:justify;">
+                    Vamos tomar como exemplo os átomos do <b>sódio \((Na)\)</b> e do <b>cloro \((Cl)\)</b> e fazer a distribuição
+                    eletrônica desses dois átomos, cujos números atômicos são 11 e 17, respectivamente:
+                </p>
+                <p>
+                    $$ Na \ ➜ \ 1s^2 2s^2 2p^6 3s^1 $$
+                    
+                    $$ Cl \ ➜ \ 1s^2 2s^2 2p^6 3s^2 3p^5 $$
+                </p>
+                <p style="text-align:center;">
+                    Vamos separar os elétrons em camadas:
+                </p>
+                <div class="figura-container-reduzida">
+                    <img class="zoomable"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765753915/tabelasn_1_aqn3lc.png" alt="">
+                </div>
+                <p style="text-align:center;">
+                    Assim ficam as últimas camadas de cada átomo:
+                </p>
+                <div class="figura-container-reduzida">
+                    <img class="zoomable" style="max-width: 80%; width: 25%;" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765754091/Formula_1_urk0pa.png"
+                        alt="">
+                </div>
+                <p style="text-align:center;">
+                    Esse método é denominado <b>Fórmula de Lewis.</b>
+                </p>
+            </div>
+        </div>
+        <br>
+    </section>
+    <section class="secao1" id="secao3">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                3. LIGAÇÃO IÔNICA
+            </h1>
+        </div>
+        <p>
+            Continuemos tomando como exemplo os átomos de <b>sódio</b> e de <b>cloro</b>. Na última camada do primeiro, há
+            apenas um elétron, enquanto que na última camada do segundo, há 7 elétrons. Se o sódio perder esse
+            elétron, ele fica <b>estável</b>, pois sua última camada passaria a ser a L, onde haveria 8 elétrons (Batista, s.d).
+            Caso o cloro receba um elétron, ele atinge 8 elétrons na última camada e, portanto, fica <b>estável</b>. Dessa
+            forma (deslize pelas setas):
+        </p>
+
+        <br>
+        <section class="slider-texto-container tema-green" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        O átomo de sódio doa esse elétron para o átomo de cloro.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Como o átomo de sódio perde um elétron, ele fica com um próton a mais na sua estrutura e,
+                        portanto, fica com <b>carga positiva.</b>
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        A esse átomo com carga elétrica <b>positiva</b> chamamos <b>CÁTION.</b>
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        O átomo de cloro, por sua vez, recebe um elétron, então ele fica com um elétron a mais na
+                        sua estrutura, sua carga torna-se <b>negativa</b> e passa a chamar-se <b>ÂNION.</b>
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Como eles possuem cargas opostas, eles se associam por atração.
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        A esse tipo de ligação, damos o nome de <b>LIGAÇÃO IÔNICA.</b>
+                    </p>
+                </div>
+                
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+        <p>
+            Assim é a representação de Lewis para as ligações iônicas:
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 1</strong>.</span> Tabela Periódica atual</h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765754543/fig1_ynfpqs.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A figura representa a ligação iônica entre os átomos de sódio e cloro utilizando a notação de Lewis. À esquerda, temos o
+                átomo de sódio, indicado por seu símbolo "Na" seguido de um "o" no expoente, indicando que ele tem apenas um elétron na
+                última camada. Ao
+                lado, está o átomo de cloro, representado pelo símbolo "C", cercado por sete elétrons ao redor do seu símbolo,
+                ilustrados como pequenos "x", o que
+                demonstra que ele possui sete elétrons na camada de valência. Entre os dois átomos, há uma seta apontando do sódio para
+                o cloro, representando
+                a transferência de um elétron do sódio para o cloro. Após essa transferência, na parte direita da figura, o sódio
+                aparece dentro de colchetes com um
+                sinal de mais no expoente, indicando que se tornou um cátion, ou seja, um íon com carga positiva. O cloro aparece também
+                entre colchetes, agora
+                com oito elétrons em sua camada de valência, sendo sete representados por "x" e um por um "o", indicando o elétron que
+                foi recebido do sódio. Ao
+                lado do cloro, há um sinal de menos no expoente, mostrando que ele se tornou um ânion, ou seja, um íon com carga
+                negativa.
+            </p>
+        </section>
+        <br>
+        <p>
+            A ligação formada pode ser escrita também como \(NaCl\). Esta é a representação da <b>fórmula mínima</b>.
+            A <b>fórmula mínima</b>, ou <b>fórmula unitária</b>, representa qual a quantidade de cada íon que é preciso para
+            formar uma estrutura neutra. Isso porque a ligação iônica é uma estrutura cristalina. Um cátion atrai mais
+            de um ânion, e vice-versa, formando uma estrutura tridimensional (Kotz, 2023).
+        </p>
+        <p>
+            Na escrita da fórmula da ligação iônica, o cátion sempre vem antes do ânion, ou seja, escreve-se em
+            ordem crescente de eletronegatividade (Rozenberg, 2002).
+        </p>
+        <p>
+            Quando dois átomos formam uma ligação, eles perdem suas características individuais e adquirem novas.
+        </p>
+
+        <br>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    Vejamos outro exemplo:
+                </p>
+                <p style="text-align:center;">
+                    <b>Cálcio \((Ca)\)</b> e <b>Flúor \((F)\)</b>. Eles possuem número atômico 20 e
+                    9, respectivamente.
+                </p>
+                <p style="text-align:center;">
+                    Vamos fazer a <b>distribuição eletrônica:</b>
+                </p>
+                <p>
+                    $$ Ca \ ➜ \ 1s^2 2s^2 2p^6 3s^2 3p^6 4s^2 $$
+        
+                    $$ F \ ➜ \ 1s^2 2s^2 2p^5 $$
+                </p>
+                <p style="text-align:center;">
+                    Na última camada do \(Ca\), há 2 elétrons, e na do \(F\), 7. Assim, o cálcio tem dois elétrons para
+                    doar e o flúor tem um parareceber. Suas cargas ficam:
+                </p>
+                <p>
+                    $$ Ca ^{+2} \ e \ F^{-}$$
+                </p>
+                <p style="text-align:center;">
+                    Por terem cargas opostas, eles se atraem. Podemos observar
+                    também que um átomo de cálcio atrai dois de flúor.
+                </p>
+            </div>
+        </div>
+        <br>
+        <p>
+            Dessa forma, podemos escrever a Fórmula de Lewis:
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 2</strong>.</span> 
+            Representação de Lewis para a ligação iônica entre cálcio e flúor
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765754997/fig2_glr9vf.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A figura apresenta a formação de uma ligação iônica entre o átomo de cálcio e dois átomos de flúor, utilizando a notação
+                de Lewis. À esquerda, observa-se o símbolo "Ca" representando o átomo de cálcio com dois "o", indicando que ele possue
+                dois elétrons na última
+                camada. Duas setas verdes partem do cálcio em direção a dois átomos de flúor, simbolizando a transferência dos dois
+                elétrons, um para cada flúor.
+                Cada átomo de flúor é representado pelo símbolo "F" rodeado por sete elétrons externos, desenhados como pequenos "x",
+                indicando os elétrons da
+                camada de valência. À direita, após a transferência eletrônica, o cálcio aparece dentro de colchetes com carga dois
+                positiva, como íon Ca dois mais,
+                demonstrando que perdeu dois elétrons. Os átomos de flúor aparecem agora com oito elétrons ao redor (sete "x" e um "o"
+                representando o elétron
+                recebido do cálcio), cada um entre colchetes com carga negativa, formando dois ânions fluoreto. A estrutura completa
+                mostra a fórmula iônica com
+                a razão mínima entre os átomos, expressa como \(CaF_2\), que aparece abaixo da imagem com o título “Fórmula Mínima: \(CaF_2\)”.
+            </p>
+        </section>
+        <br>
+        <p>
+            É comum ocorrer uma ligação iônica quando há perda ou ganho de até 3 elétrons. Um exemplo de cátion
+            trivalente seria o alumínio \((Al^{+3})\) e de um ânion trivalente seria o fósforo \((P^{-3})\).
+        </p>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                3.1 FÓRMULAS DE COMPOSTOS IÔNICOS
+            </h1>
+        </div>
+        <p>
+            Nem sempre é preciso escrever a fórmula de Lewis para determinar a fórmula mínima. Podemos usar o
+            conceito de <b>carga zero</b> em um composto, ou seja, quantos cátions e quantos ânions são precisos para a
+            soma das cargas positivas e negativas ser nula. Assim, o número de cada átomo na estrutura é baseado
+            neste princípio (Chang, 2010).
+        </p>
+        <p>
+            Consideremos o nitreto de potássio. Ele é formado por átomos de nitrogênio e de potássio. Mas quantos
+            de cada? Vejamos a seguir:
+        </p>
+
+        <br>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    Vamos fazer distribuição eletrônica de cada elemento \((_{7}N \ e \ _{19}K)\).
+                </p>
+                <p>
+                    $$ N \ ➜ \ 1s^2 2s^2 2p^3 $$
+                
+                    $$ K \ ➜ \ 1s^2 2s^2 2p^6 3s^2 3p^6 4s^1 $$
+                </p>
+                <p style="text-align:center;">
+                    O potássio possui 1 elétron em sua última camada, portanto tende a
+                    doá-lo para se estabilizar.
+                </p>
+                <p style="text-align:center;">
+                    O nitrogênio possui 5 elétrons em sua última camada, logo precisa
+                    receber 3 para se estabilizar.
+                </p>
+                
+                <p style="text-align:center;">
+                    Podemos escrevê-los em sua representação iônica:
+                </p>
+                <p>
+                    $$ K ^{+} \  \ N^{-3}$$
+                </p>
+                <p style="text-align:center;">
+                    A fórmula do nitreto de Potássio é obtida cruzando as cargas:
+                </p>
+                <p>
+                    $$ K_3 N_1 \ ou \ K_3N$$
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    Na fórmula de um composto iônico <b>\(X_y \ Y_x\)</b> qualquer, formado pelos íons <b>\(X^{+x}\)</b> e <b>\(Y^{-y}\)</b>, o índice
+                    de X é igual à carga de Y, e o índice de Y é igual à carga de X, em módulo.
+                </p>
+                <p style="text-align:center;">
+                    Caso possa haver simplificação, efetuá-la, pois representa a fórmula mínima.
+                </p>
+            </div>
+        </div>
+        <br><br>
+        
+    </section>
+    
+    <!-- Contêiner externo para definir a cor de fundo -->
+    <section class="outer-background2" style="background-color: #9f43be11;">
+        <!-- Seção Saiba Mais - Retângulo de Fundo -->
+        <section class="background-section2">
+            <!-- Círculo Verde -->
+            <div class="circle-green2">
+                <!-- Círculo Branco com ícone -->
+                <div class="circle-white2">
+                    <i class='bx bx-error-circle'></i>
+                </div>
+            </div>
+            <div class="transparent-section2">
+                <br><br><br>
+                <h1 class="learn-more-title">IMPORTANTE</h1>
+                <br><br>
+                <p class="learn-more-paragraph" style="text-align: center;">
+                    Quando o átomo pertence à <b>família B</b>, a camada de valência <b>não é a última cama
+                    da distribuída.</b>
+                </p>
+                <br>
+                <p class="learn-more-paragraph" style="text-align: center;">
+                    Veja o exemplo do <b>Cromo \((_{24}Cr)\)</b>:
+                </p>
+                <p> $$ \large 1s^2 \ 2s^2 \ 2p^6 \ 3s^2 \ 3p^6 \ 4s^2 \ 3d^4 $$</p>
+                <p class="learn-more-paragraph" style="text-align: center;">
+                    Neste caso, os elétrons analisados são da camada de valência, que é a mais exter
+                    na: \(4s^2\).
+                </p>
+                <p class="learn-more-paragraph" style="text-align: center;">
+                    Então o átomo de cromo perde dois elétrons e sua distribuição como íon fica:
+                </p>
+                <p>
+                    $$ \large Cr^{+2} \ ➜ \ 1s^2 \ 2s^2 \ 2p^6 \ 3s^2 \ 3p^6 \ 3d^4 $$
+                </p>
+                <p class="learn-more-paragraph" style="text-align: center;">
+                    <b>Sem a camada 4s².</b>
+                </p>
+                
+        </section>
+        <br><br>
+    </section>
+    
+    <section class="secao2" id="secao4">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                4. LIGAÇÃO COVALENTE
+            </h1>
+        </div>
+        <p>
+            O átomo de cloro, quando está no mesmo meio do de sódio, recebe um elétron deste elemento químico
+            e forma o <b>composto NaCl.</b> Entretanto, sabe-se que na natureza existe o composto \(Cl_2\), 
+            formado por dois átomos de Cl. Se cada um deles precisa receber um elétron para ficar estável, não seria possível um
+            ceder um elétron para o outro, pois o átomo que doou ficaria instável. Neste tipo de ligação, não ocorre a
+            doação / recebimento de elétrons, mas sim o <b>compartilhamento</b> deles (Kotz, 2023).
+        </p>
+        <p>
+            Quando há o compartilhamento de elétrons em uma ligação química, ela é denominada <b>LIGAÇÃO
+            COVALENTE OU MOLECULAR</b>. Vamos ver como fica sua estrutura na fórmula de Lewis:
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 3</strong>.</span>
+            Representação de Lewis para a ligação<br>
+            covalente entre dois átomos de cloro
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765757091/fig3_puwlyp.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem ilustra, por meio da notação de Lewis, a formação de uma ligação covalente
+                entre dois átomos de cloro. À esquerda, aparecem dois átomos de cloro isolados, cada um representado pelo
+                símbolo "Cl" envolto por sete elétrons de valência, indicados por pequenos "x" dispostos ao redor do símbolo. Uma
+                seta verde aponta da configuração inicial para a estrutura resultante à direita. Na estrutura final, os dois átomos de
+                cloro continuam representados com oito elétrons de valência, que foi possível pelo compartilhamento de um par
+                de elétrons entre si, simbolizado por dois "x" localizados entre os dois átomos. Esse par de elétrons é destacado
+                por um círculo e uma seta curva, indicando que se trata de uma ligação covalente, em que os dois átomos
+                compartilham elétrons para completar seus octetos. A imagem é finalizada com a legenda "Ligação Covalente".
+            </p>
+        </section>
+        <br>
+        <p>
+            A fórmula também pode ser escrita representando o compartilhamento do par de elétrons por uma seta,
+            conhecida como fórmula estrutural plana:
+        </p>
+        <p>
+            $$ Cl - Cl $$
+        </p>
+        <p>
+            Ou em fórmula molecular, que quais são os elementos químicos que fazem parte desta ligação, e quantos
+            átomos têm de cada um deles, representado pelo índice à direita:
+        </p>
+        <p>
+            $$ Cl_2 $$
+        </p>
+       
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    Outro exemplo, é a molécula da água, a qual é composta 
+                    por átomos de hidrogênio \((_{1}H)\) e oxigênio \((_{8}O)\).
+                </p>
+                <p>
+                    $$ \large H \ ➜ \ 1s^1 $$
+                </p>
+                <p>
+                    $$ \large O \ ➜ \ 1s^2 \ 2s^2 \ 2p^4 $$
+                </p>
+            </div>
+        </div>
+        <p>
+            O átomo de hidrogênio tem um elétron na última camada, e o átomo de oxigênio, tem 6. Assim, o hidrogênio,
+            mesmo tendo apenas um elétron, não pode doá-lo, pois precisa ter dois elétrons para estabilizar-se
+            (camada K); e o oxigênio precisa de mais dois elétrons para se estabilizar. Assim, eles compartilham os
+            elétrons e formam uma ligação covalente.
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 4</strong>.</span>
+            Representação de Lewis da molécula de água.
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 25%;" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765757403/fig4_kkbkwx.png"
+                    alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula de Lewis da molécula de água, composta por
+                um átomo de oxigênio central e dois átomos de hidrogênio ligados a ele. O oxigênio é representado pelo
+                símbolo "O" e está rodeado por dois pares de elétrons isolados, indicados por pequenos círculos. Abaixo
+                do oxigênio, há dois átomos de hidrogênio, representados pela letra "H", cada um com um elétron sim
+                bolizado por um "x". Entre o oxigênio e cada hidrogênio, há um par de elétrons, formado por um "o" e um
+                "x", que indica a formação de uma ligação covalente simples entre esses átomos.
+            </p>
+        </section>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 5</strong>.</span>
+            Fórmula estrutural da molécula de água.
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 15%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765757476/fig5_kb1n5v.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem mostra a fórmula estrutural da molécula de
+                água, representando a ligação entre os átomos por meio de traços. No centro da
+                figura está o símbolo do oxigênio, indicado pela letra "O". Abaixo dele, há dois
+                traços conectando o oxigênio a dois átomos de hidrogênio, representados pela
+                letra "H". Cada traço simboliza uma ligação covalente simples, indicando o com
+                partilhamento de um par de elétrons entre o oxigênio e cada hidrogênio. A imagem
+                evidencia a geometria angular da molécula de água e reforça sua composição
+                básica, formada por dois átomos de hidrogênio ligados a um átomo de oxigênio.
+            </p>
+            <p>$$ Fórmula \ molecular: H_2O$$</p>
+        </section>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                4.1 LIGAÇÕES COVALENTES MÚLTIPLAS
+            </h1>
+        </div>
+        <p>
+            Os átomos podem compartilhar, além de um par, dois ou três pares de elétrons. Quando ocorre esse tipo
+            de ligação, dizemos que houve uma <b>ligação covalente dupla</b> ou <b>tripla</b> (Both, 2018).
+        </p>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    Um exemplo é a ligação do <b>carbono</b> \((_{8}C)\) 
+                    com o <b>oxigênio</b> \((_{8}O)\).
+                </p>
+                <p style="text-align:center;">
+                    A <b>distribuição eletrônica</b> deles fica:
+                </p>
+                <p>
+                    $$ \large C \ ➜ \ 1s^2 \ 2s^2 \ 2p^2 $$
+                </p>
+                <p>
+                    $$ \large O \ ➜ \ 1s^2 \ 2s^2 \ 2p^4 $$
+                </p>
+            </div>
+        </div>
+        <p>
+            O átomo de carbono precisa de 4 elétrons e o de oxigênio, 2. Assim, o carbono compartilha dois elétrons
+            com um oxigênio e dois elétrons com outro.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 6</strong>.</span>
+            Fórmula de Lewis do dióxido de carbono \(CO_2\)
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 20%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765757825/fig6_by8lgh.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula de Lewis da molécula de dióxido de carbono. No centro, há um
+                átomo de carbono representado pela letra "C". À esquerda e à direita desse átomo central, há dois átomos de oxigênio,
+                representados pela letra "O". Entre o carbono e cada oxigênio, estão indicados dois pares de elétrons compartilhados.
+                Os elétrons do C estão simbolizados por quatro "x", e os elétrons do O estão representados por "o". Entre eles há a
+                representação de duas ligações covalentes duplas, formadas, cada uma, por dois “o” e dois “x”. Ao redor de cada átomo
+                de oxigênio há dois pares de elétrons não ligantes, simbolizados”o”, localizados nas partes superior e inferior de cada
+                oxigênio. A imagem destaca a distribuição dos elétrons de valência entre os átomos que compõem a molécula de \(CO_2\).
+            </p>
+        </section>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 7</strong>.</span>
+            Representação da molécula de dióxido de carbono
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 40%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765757825/fig7_nvapsv.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula estrutural e a fórmula molecular do
+                dióxido de carbono. A fórmula estrutural é escrita como O = C = O, indicando que o átomo
+                de carbono está ligado a dois átomos de oxigênio por ligações duplas, uma em cada lado.
+                Logo abaixo, aparece a fórmula molecular do composto, representada como \(CO_2\), 
+                mostrando que a molécula é composta por um átomo de carbono e dois átomos de oxigênio.
+            </p>
+        </section>
+        <br>
+
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align:center;">
+                    No caso da molécula de nitrogênio \((N_2)\), 
+                    dois átomos de nitrogênio \((_{7}N)\) precisam se ligar.
+                    Fazendo a distribuição eletrônica, temos:
+                </p>
+                <p>
+                    $$ \large N \ ➜ \ 1s^2 \ 2s^2 \ 2p^3 $$
+                </p>
+            </div>
+        </div>
+        <br>
+        <p>
+            O nitrogênio precisa de 3 elétrons cada, de forma que cada átomo compartilha 3 elétrons, formando uma
+            ligação covalente tripla.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 8</strong>.</span>
+            Fórmula de Lewis do nitrogênio \((N_2)\)
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 20%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758305/fig8_ytc4uv.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                    A imagem apresenta a fórmula de Lewis da molécula de nitrogênio. No centro,
+                    há dois átomos de nitrogênio, representados pela letra "N", ligados entre si. Entre eles, há três pares
+                    de elétrons compartilhados, representados por três símbolos "x", e três símbolos "o" formando uma
+                    ligação tripla. O primeiro átomo de nitrogênio exibe um par de elétrons não ligante na parte inferior
+                    esquerda, também representado por dois símbolos "x". A imagem evidencia como os elétrons de valência 
+                    estão distribuídos na molécula e quais ligações são estabelecidas entre seus átomos.
+            </p>
+        </section>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 9</strong>.</span>
+            Representação da molécula de nitrogênio
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 35%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758313/fig9_jfiknm.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula estrutural e a fórmula molecular da
+                molécula de nitrogênio. A fórmula estrutural é representada como N≡N, indicando que dois
+                átomos de nitrogênio estão ligados por uma ligação tripla, o que confere grande estabilidade
+                à molécula. Abaixo, aparece a fórmula molecular \((N_2)\), que indica que a molécula é composta
+                por dois átomos de nitrogênio.
+            </p>
+        </section>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                4.2 LIGAÇÃO COVALENTE DATIVA
+            </h1>
+        </div>
+        <p>
+            Existe uma situação especial da ligação covalente. Para entender esse fato, vamos considerar as ligações
+            entre os átomos de enxofre \((_{16}S)\) e oxigênio \((_{8}O)\)
+            (Batista, s.d.). Segue a distribuição eletrônica deles:
+        </p>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    $$ \large S \ ➜ \ 1s^2 \ 2s^2 \ 2p^6 \ 3s^2 \ 3p^4$$
+                </p>
+                <p>
+                    $$ \large O \ ➜ \ 1s^2 \ 2s^2 \ 2p^4 $$
+                </p>
+            </div>
+        </div>
+        <p>
+            O enxofre possui 6 elétrons na última camada e o oxigênio também. Como os dois precisam de elétrons,
+            para atingirem a estabilidade, cada um compartilha dois elétrons:
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 10</strong>.</span>
+            Fórmula de Lewis do dióxido de enxofre \(SO_2\)
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 20%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758587/fig10_p0qhng.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula de Lewis da molécula de dióxido de enxofre. À
+                esquerda, o átomo de enxofre, representado pela letra “S”, está envolto por quatro pares de elétrons não
+                ligantes, indicados por círculos dispostos ao redor do símbolo. À direita, o átomo de oxigênio, indicado pela
+                letra "O", está ligado ao enxofre por dois pares de elétrons compartilhados, representados por dois sím
+                bolos "x", formando uma ligação dupla. Além disso, o oxigênio possui dois pares de elétrons não ligantes
+                em sua periferia, também marcados por símbolos "x". A imagem representa a distribuição dos elétrons de
+                valência entre os átomos da molécula, destacando as ligações químicas e os elétrons isolados.
+            </p>
+        </section>
+        <br>
+        <p>
+            Na natureza, sabemos que existe ainda o \(SO_2\)
+            e \(SO_3\), indicando que há a possibilidade de mais um ou
+            dois átomos de oxigênio se ligarem ao enxofre. Entretanto, não é possível ser por compartilhamento de
+            elétrons, uma vez que o enxofre já está estável. Neste caso, somente o enxofre compartilha o par de
+            elétrons. A esse tipo de ligação, damos o nome de <b>ligação covalente dativa</b>.
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 11</strong>.</span>
+            Ligação covalente dativa na molécula<br>
+            de dióxido de enxofre \((SO_2)\).
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 20%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758711/fig11_wnkgin.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem mostra a fórmula de Lewis da molécula de dióxido de enxofre \((SO_2)\), evidenciando 
+                uma ligação covalente dativa. No centro da imagem, está o átomo de enxofre representado pela
+                letra “S”, rodeado por dois pares de elétrons não ligantes, indicados por círculos. À esquerda e à direita do
+                enxofre, encontram-se dois átomos de oxigênio, representados pela letra “O”. O oxigênio à direita está co
+                nectado ao enxofre por meio de ligações formadas por pares de elétrons representados pelo símbolo "x" do
+                oxigênio e "o" do enxofre. O átomo de oxigênio à esquerda não compartilha elétrons, apenas recebe um par
+                compartilhado do enxofre, representado por "o", indicando a ligação dativa. Neste oxigênio há três pares de
+                elétrons livres ao seu redor.
+            </p>
+        </section>
+        <br>
+        <p>
+            A representação da fórmula estrutural é através de uma seta:
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 12</strong>.</span>
+            Representação estrutural da ligação covalente<br>
+            dativa na molécula de dióxido de enxofre \((SO_2)\).
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 25%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758834/fig12_tqro6z.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a fórmula estrutural da molécula de dióxido de enxofre \((SO_2)\),
+                evidenciando uma ligação covalente dativa. No centro da figura está o átomo de enxofre, representado pela
+                letra “S”, que se liga a dois átomos de oxigênio. À esquerda do enxofre, há uma ligação dupla com o oxigê
+                nio, indicada por dois traços paralelos. À direita, o enxofre se liga ao outro oxigênio por meio de uma seta
+                apontando do enxofre para o oxigênio, representando a ligação covalente dativa, em que o par de elétrons
+                compartilhado é fornecido pelo átomo de enxofre. Essa notação evidencia que, embora o enxofre esteja
+                compartilhando elétrons com ambos os oxigênios, a origem dos elétrons no segundo caso é unilateral, ca
+                racterizando a atividade da ligação.
+            </p>
+        </section>
+        <br>
+        <p>
+            Como ainda há mais um par de elétrons disponível no enxofre, ele pode fazer mais uma ligação dativa.
+        </p>
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 13</strong>.</span>
+            Representação tridimensional da molécula de trióxido de enxofre \((SO_2)\).
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 25%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765758891/fig13_a6w9ww.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta a estrutura da molécula de trióxido de enxofre composta por
+                um átomo central de enxofre, representado pela letra "S", ligado a três átomos de oxigênio. À esquerda do
+                enxofre, há uma ligação dupla com um oxigênio, representada por dois traços paralelos. À direita, observa-se
+                uma ligação covalente dativa, representada por uma seta apontando do enxofre para o oxigênio, indicando
+                que o par de elétrons compartilhado nessa ligação foi cedido pelo enxofre. Na parte superior da imagem,
+                um terceiro oxigênio se liga ao enxofre por meio de outra seta, apontando de baixo para cima, também
+                indicando uma ligação covalente dativa.
+            </p>
+        </section>
+        <br>
+        <p>
+            Observamos que através da ligação covalente e da ligação covalente dativa pode haver três moléculas
+            diferentes da combinação de enxofre com oxigênio: \( SO, SO_2, SO_3\).
+        </p>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p style="text-align: center;">
+                    Ligação Covalente Dativa é a ligação covalente que ocorre
+                    entre dois átomos quando apenas um deles compartilha
+                    um par de elétrons e o outro apenas recebe.
+                </p>
+            </div>
+        </div>
+        <p>
+            É complicado esse assunto, não é? Assista esse vídeo para consolidar o entendimento sobre ligações
+            covalentes.
+        </p>
+        <br>
+        <div class="video-play-wrapper">
+            <div class="video-play-btn" data-video="https://drive.google.com/file/d/1NVY0ZtYARE8n1VAR3CuxLAPtumgspB7X/preview"
+                onclick="openVideoModal(this)">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="video-play-text">Clique para assistir</div>
+        </div>
+        
+        </div>
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <br>
+        <div class="faixa-verde">
+            <h1 class="titulo-secao" style="font-size: 22px !important;">
+                4.3 LIGAÇÃO COVALENTE POLAR E APOLAR
+            </h1>
+        </div>
+        <p>
+            Você já deve ter estudado anteriormente que uma das propriedades dos elementos químicos é a
+            eletronegatividade, que é a capacidade de um átomo atrair elétrons de outro átomo. Vimos também
+            que ela cresce de baixo para cima e da esquerda para a direita. Ela é inversamente proporcional ao
+            tamanho do átomo. Quanto menor o átomo e maior o número de elétrons na última camada, maior é sua
+            eletronegatividade. Assim, dizemos que os átomos possuem cargas diferentes nas reações químicas
+            (Rozenberg, 2002).
+        </p>
+        <div class="quadro-problema">
+            <div class="topo">
+        
+                <p style="text-align: center;">
+                    Vamos utilizar como exemplo a <strong>molécula de <em>HCl</em></strong>.
+                </p>
+        
+               
+        
+                <p style="text-align: center;">
+                    \( H \ ➜ \ 1s^{1} \)
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    \( Cl \ ➜ \ 1s^{2}\;2s^{2}\;2p^{6}\;3s^{2}\;3p^{5} \)
+                </p>
+        
+               
+        
+                <p style="text-align: center;">
+                    Para ambos atingirem a estabilidade eletrônica, eles compartilham
+                    <strong>um elétron</strong>.
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Mas com qual intensidade esse compartilhamento acontece?
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Como o cloro tem mais prótons e elétrons que o hidrogênio, a força de
+                    atração do elétron para ele é maior do que a do hidrogênio.
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Podemos dizer que a carga parcial negativa do cloro
+                    \( (\delta^{-}) \) é maior que a carga parcial positiva do hidrogênio
+                    \( (\delta^{+}) \).
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Apesar de a carga da molécula ser neutra, há a existência de uma
+                    polaridade.
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Neste caso, dizemos que a ligação covalente é
+                    <strong>POLAR</strong>.
+                </p>
+        
+                
+        
+                <p style="text-align: center;">
+                    Quando as cargas parciais forem iguais, a ligação é
+                    <strong>APOLAR</strong>.
+                </p>
+        
+            </div>
+        </div>
+        <p>
+            Em resumo, podemos dizer que uma ligação é covalente polar quando houver eletronegatividade diferente
+            entre os átomos ligados e, portanto, a formação de cargas parciais. E dizemos que a ligação é covalente
+            apolar quando a eletronegatividade entre os átomos for igual.
+        </p>
+    </section>
+    <section class="secao1" id="secao5">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                5. LIGAÇÃO METÁLICA
+            </h1>
+        </div>
+        <p>
+            Ao estudar as ligações entre os metais, foi observado que eles se organizaram em estruturas definidas
+            como <b>cristalinas</b>. Nessas estruturas, um átomo se liga a 8 ou 12 outros átomos, o que não seria possível
+            pela ligação iônica nem pela ligação covalente (Batista, s.d.).
+        </p>
+        <p>
+            Como a eletronegatividade dos metais é baixa, eles têm grande facilidade de liberar os elétrons da última
+            camada. Quando agrupados, esses elétrons transitam entre os átomos, o que faz com que um átomo
+            fique temporariamente com carga positiva, uma vez que o número de prótons é superior nesse momento.
+            Devido a isso, os átomos de metais podem ser vistos como íons positivos que ocupam os retículos
+            cristalinos.
+        </p>
+        <p>
+            Esses elétrons livres formam uma "nuvem" de elétrons em que os íons positivos ficam mergulhados.
+            Essas cargas é que formam a <b>ligação metálica</b>.
+        </p>
+        <p>
+            De modo diferente do que acontece nas ligações iônicas e covalentes, nas quais a estrutura cristalina é
+            formada pela atração entre cátions e ânions (ligação iônica) ou que há o compartilhamento entre elétrons
+            permitindo a ligação entre dois átomos ou mais átomos (ligação covalente), os elétrons na ligação metálica
+            não pertencem a nenhum átomo específico. Esta é uma ligação entre os átomos muito forte. Esse é o
+            motivo pelo qual a grande maioria dos metais são sólidos à temperatura ambiente (Chang, 2010).
+        </p>
+
+        <br>
+        <!-- Título fora do container -->
+        <h3 class="titulo-figura-central"><span class="figura"><strong>Figura 14</strong>.</span>
+            Representação de ligação metálica
+        </h3>
+        
+        <!-- Bloco de Figura (sem borda e fundo) -->
+        <section class="bloco-figura-simples tema-verde">
+            <!-- Imagem -->
+            <div class="figura-container">
+                <img class="zoomable" style="max-width: 80%; width: 40%;"
+                    src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765761189/fig14_kyzdx7.png" alt="">
+            </div>
+            <br>
+            <!-- Fonte abaixo da imagem -->
+            <p class="fonte-imagem">
+                <strong><i>Fonte</strong>: Elaborada pela autora.</i>
+            </p>
+        
+            <!-- Descrição com largura maior -->
+            <p class="descricao-figura-larga">
+                <strong>Descrição da imagem:</strong>
+                A imagem apresenta uma ilustração esquemática da ligação metálica, na qual se
+                observa uma organização regular de círculos representando íons positivos fixos em uma estrutura ordenada.
+                Entre esses íons, estão dispersos pequenos pontos pretos, que simbolizam os elétrons livres.
+            </p>
+        </section>
+        <br>
+        <p>
+            Esse tipo de ligação proporciona aos metais algumas características importantes, deslize pelas setas
+            para ler:
+        </p>
+        <br>
+        <section class="slider-texto-container tema-green" data-slider-id="2">
+            <!-- conteúdo do slider 2 -->
+            <div class="slider-texto-wrapper">
+                <div class="slide-texto ativo">
+                    <p class="conteudo-texto">
+                        Elevados pontos de fusão e ebulição;
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Elevada densidade;
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Elevada condutividade elétrica;
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Elevada condutividade térmica;
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Maleabilidade;
+                    </p>
+                </div>
+                <div class="slide-texto">
+                    <p class="conteudo-texto">
+                        Ductilidade.
+                    </p>
+                </div>
+        
+            </div>
+        
+            <button class="seta-texto esquerda" onclick="mudarSlideTexto(this, -1)">&#10094;</button>
+            <button class="seta-texto direita" onclick="mudarSlideTexto(this, 1)">&#10095;</button>
+        
+            <div class="slider-texto-indicadores">
+            </div>
+        </section>
+        <br>
+        <p>
+            Vimos os três tipos de ligações químicas. Acredito que você já entendeu como identificá-las, mas caso
+            tenha ficado alguma dúvida, assista ao vídeo a seguir:
+        </p>
+        <br>
+        <div class="video-play-wrapper">
+            <div class="video-play-btn" data-video="https://drive.google.com/file/d/12yFsZCdDAMtzqRr3yLFSD8NxGgMqw6AV/preview" onclick="openVideoModal(this)">
+                <i class='bx bx-play'></i>
+            </div>
+            <div class="video-play-text">Clique para assistir</div>
+        </div>
+        
+        </div>
+        <!-- Modal com o vídeo -->
+        <div id="videoModal" class="video-modal" onclick="closeVideoModal()">
+            <div class="video-content" onclick="event.stopPropagation()">
+                <i class="bx bxs-x-circle close-btn" onclick="closeVideoModal()"></i>
+                <iframe id="videoIframe" width="800" height="450" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <br>
+    </section>
+    <section class="secao2" id="secao6">
+        <div class="faixa-verde">
+            <h1 class="titulo-secao">
+                6. EXERCÍCIOS COMENTADOS
+            </h1>
+        </div>
+
+        <br>
+        <!-- Aplicando a correção nos cálculos problemáticos -->
+        <div class="quadro-problema">
+            <div class="topo">
+                <p><strong>1.</strong>
+                    Faça a representação de Lewis para o átomo de Cálcio
+                    \(Z = 20\).
+                </p>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong>
+                    Primeiro fazemos a distribuição eletrônica do Cálcio
+                    \(Z = 20\):
+                </p>
+                <div class="math-wrapper">
+                    <p>
+                        $$ 1s^2 \ 2s^2 \ 2p^6 \ 3s^2 \ 3p^6 \ 4s^2 $$
+                    </p>
+                </div>
+                <p>
+                    Essa configuração mostra que o cálcio possui dois elétrons na camada de valência (a quarta camada: \(4s^2\) ).
+                </p>
+                <p>
+                    Na notação de Lewis, representamos apenas os elétrons da camada de valência como pontos ao redor
+                    do símbolo do elemento. Como o cálcio possui dois elétrons na última camada, ele é representado com
+                    dois "o" do lado direito do símbolo, formando a representação:
+                </p>
+                <p>
+                    $$ \mathrm{Ca}
+                    \begin{array}{c}
+                    \circ \\
+                    \circ
+                    \end{array} $$
+                </p>
+            </div>
+        </div>
+        
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>2.</strong>
+                    Os elementos \(_{13}Al\) e \(_{16}S\) formam uma ligação iônica entre si. Indique:
+                </p>
+                <p>a) A eletrovalência de cada íon;</p>
+                <p>b) A fórmula iônica;</p>
+                <p>c) A fórmula unitária;</p>
+                <p>d) A fórmula de Lewis.</p>
+            </div>
+            <div class="resolucao">
+                <p><strong>Resolução:</strong>
+                    
+                </p>
+                <p>
+                    a) A eletrovalência representa a carga elétrica que o átomo adquire ao formar um íon:
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> O alumínio (Al) possui <b>3 elétrons na camada de valência</b>, e tende a perdê-los
+                    \(\rightarrow; \ Al^{3+}\)
+
+                    
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> O enxofre (S) possui <b>6 elétrons na camada de valência</b>, e tende a ganhar 2
+                    \(\rightarrow; \ S^{2 \cdot}\)
+                </p>
+                <p>
+                    b) Para formar um composto neutro, a carga total dos íons positivos deve equilibrar a dos íons negativos.
+                    Uma maneira de determinar essa quantidade, é trocar as cargas em módulo, ou seja, a carga +3 do
+                    alumínio se torna o índice 3 do enxofre e a carga -2 do enxofre se torna o índice 2 do alumínio.
+                </p>
+                <p>
+                    Logo, a fórmula iônica completa com cargas é:
+                </p>
+                <p>
+                    $$ Al_{2}
+                    ^{+3} \ S_{3}^{-2}$$
+                </p>
+                <p>
+                    c) A fórmula unitária representa apenas a proporção entre os átomos, sem mostrar as cargas:
+                </p>
+                <p>
+                    $$
+                    Al_{2} \ S_{3} 
+                    $$
+                </p>
+                <p>
+                    d) Na representação de Lewis, os íons aparecem entre colchetes, com suas cargas e, no caso dos ânions
+                    (enxofre), com os pares de elétrons ao redor:
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> O \( Al^{3+}\) aparece sem elétrons ao redor (pois os perdeu).
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> O \( S^{2\cdot}\) aparece com oito elétrons (completando o octeto).
+                </p>
+                <p>
+                    A imagem ilustra corretamente:
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> dois íons \( Al^{3+}\) 
+                </p>
+                <p class="item-recuado">
+                    <b>▸</b> três íons \( S^{2\cdot}\) com seus octetos representados por pares de pontos
+                </p>
+                <p>
+                    A fórmula Lewis fica:
+                </p>
+                <div class="figura-container-reduzida">
+                    <img class="zoomable fundo-transparente" src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765762319/figexcomentado_lyfc4y.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+        
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>3.</strong> Determine a fórmula unitária formada pelos compostos
+                    \( {}_{28}\mathrm{Ni} \) e \( {}_{17}\mathrm{Cl} \).
+                </p>
+            </div>
+        
+            <div class="resolucao">
+                <p>
+                    <strong>Resolução:</strong>
+                </p>
+        
+                <p>
+                    Primeiro, vamos fazer a distribuição eletrônica dos elementos:
+                </p>
+        
+                <p class="item-recuado">
+                    <b>▸</b> Níquel (Ni) tem número atômico 28. A distribuição eletrônica completa é:
+                </p>
+        
+                <p>
+                    $$ \mathrm{Ni} \;\rightarrow\; 1s^2 \; 2s^2 \; 2p^6 \; 3s^2 \; 3p^6 \; 4s^2 \; 3d^8 $$
+                </p>
+        
+                <p>
+                    A última camada, a camada de valência, é a \(4s^2\).
+                    Ao perder esses dois elétrons, forma o cátion \( \mathrm{Ni}^{2+} \).
+                </p>
+        
+                <p class="item-recuado">
+                    <b>▸</b> Cloro (Cl) tem número atômico 17. A distribuição eletrônica é:
+                </p>
+        
+                <p>
+                    $$ \mathrm{Cl} \;\rightarrow\; 1s^2 \; 2s^2 \; 2p^6 \; 3s^2 \; 3p^5 $$
+                </p>
+        
+                <p>
+                    Para completar o octeto, o cloro ganha 1 elétron e forma o ânion
+                    \( \mathrm{Cl}^{-} \).
+                </p>
+        
+                <p>
+                    A fórmula mínima é determinada pela troca das cargas,
+                    e o cátion é escrito na frente.
+                </p>
+        
+                <p class="item-recuado">
+                    <b>▸</b> O cátion \( \mathrm{Ni}^{2+} \) precisa de dois ânions
+                    \( \mathrm{Cl}^{-} \) para neutralizar a carga total.
+                </p>
+        
+                <p class="item-recuado">
+                    <b>▸</b> Para facilitar, faz-se o “cruzamento das cargas” para compor o composto iônico.
+                </p>
+        
+                <p>
+                    $$ \mathrm{Ni}^{2+} \; \mathrm{Cl}^{-} \;\rightarrow\; \mathrm{NiCl}_{2} $$
+                </p>
+        
+            </div>
+        </div>
+        
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>4.</strong> Considere os átomos \( {}_{7}\mathrm{N} \) e \( {}_{1}\mathrm{H} \).
+                    Que tipo de ligação eles fazem entre si? Escreva a fórmula de Lewis,
+                    estrutural ou molecular da ligação formada.
+                </p>
+            </div>
+        
+            <div class="resolucao">
+                <p>
+                    <strong>Resolução:</strong>
+                    Primeiramente, fazemos a distribuição eletrônica:
+                </p>
+        
+                <p class="item-recuado">
+                    <b>▸</b> Nitrogênio (N):
+                </p>
+        
+                <div class="math-wrapper">
+                    <p>
+                        $$ \mathrm{N} \;\rightarrow\; 1s^2 \; 2s^2 \; 2p^3 $$
+                    </p>
+                </div>
+        
+                <p>
+                    Possui 5 elétrons na camada de valência, precisando de 3 elétrons
+                    para completar o octeto.
+                </p>
+        
+                <p>
+                    Hidrogênio (H):
+                </p>
+        
+                <div class="math-wrapper">
+                    <p>
+                        $$ \mathrm{H} \;\rightarrow\; 1s^1 $$
+                    </p>
+                </div>
+        
+                <p>
+                    Possui 1 elétron e precisa de mais 1 para estabilizar sua camada (dueto).
+                </p>
+        
+                <p>
+                    Como ambos precisam de elétrons e não há doação completa de elétrons,
+                    mas sim compartilhamento, trata-se de uma ligação covalente.
+                </p>
+        
+                <p>
+                    Fórmula de Lewis:
+                    mostra os elétrons de valência e como são compartilhados.
+                    O nitrogênio aparece com três ligações simples com três hidrogênios
+                    e um par de elétrons livres no topo.
+                </p>
+                
+                <div class="figura-container-reduzida">
+                    <img class="zoomable fundo-transparente"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765764191/exercicio_4_sn1_dkao1j.png" alt="">
+                </div>
+                <!-- Representação de Lewis em imagem (inserir posteriormente) -->
+        
+                <p>
+                    Fórmula estrutural:
+                    simplificada, apresenta apenas as ligações covalentes com traços:
+                </p>
+                
+                <div class="figura-container-reduzida">
+                    <img class="zoomable fundo-transparente"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765764191/exercicio_4_sn2_zt6uog.png" alt="">
+                </div>
+                <!-- Representação estrutural em imagem (inserir posteriormente) -->
+        
+                <p>
+                    Entretanto, esta não é uma molécula plana, ela é tridimensional,
+                    piramidal trigonal.
+                </p>
+        
+                <p>
+                    E a fórmula molecular é:
+                </p>
+        
+                <div class="math-wrapper">
+                    <p>
+                        $$ \mathrm{NH}_{3} $$
+                    </p>
+                </div>
+        
+            </div>
+        </div>
+        <div class="quadro-problema">
+            <div class="topo">
+                <p>
+                    <strong>5.</strong> Escreva a fórmula estrutural do \( \mathrm{H}_{2}\mathrm{SO}_{4} \).
+                </p>
+            </div>
+        
+            <div class="resolucao">
+                <p>
+                    <strong>Resolução:</strong>
+                    Vamos começar com a distribuição eletrônica a partir dos números
+                    atômicos na tabela periódica:
+                </p>
+                <div class="math-wrapper">
+                    <p>
+                        $$ {}_{1}\mathrm{H} \;\rightarrow\; 1s^{1} $$
+                    </p>
+                </div>
+                <div class="math-wrapper">
+                    <p>
+                        $$ {}_{16}\mathrm{S} \;\rightarrow\; 1s^{2}\;2s^{2}\;2p^{6}\;3s^{2}\;3p^{4} $$
+                    </p>
+                </div>
+                <div class="math-wrapper">
+                    <p>
+                        $$ {}_{8}\mathrm{O} \;\rightarrow\; 1s^{2}\;2s^{2}\;2p^{4} $$
+                    </p>
+                </div>
+                <p>
+                    O hidrogênio precisa de 1 elétron, o enxofre de 2 e o oxigênio de 2.
+                    Vamos fazer a fórmula de Lewis para cada um.
+                </p>
+                <!-- Representação de Lewis (imagem a ser inserida posteriormente) -->
+                <div class="figura-container-reduzida">
+                    <img class="zoomable fundo-transparente"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765764438/figura_5_sn1_flebjf.png" alt="">
+                </div>
+                <p>
+                    A fórmula diz que temos 1 enxofre. Esse enxofre pode compartilhar dois elétrons. Se o ligarmos a apenas
+                    um oxigênio, que também precisa de 2 elétrons, eles estariam estáveis. Mas temos mais átomos a ligar.
+                    Então, se ligarmos um enxofre a 2 oxigênios, o enxofre estará estável, mas o oxigênio precisará de mais
+                    um elétron, que pode ser compartilhado com o hidrogênio. Mas ainda assim faltam 2 átomos de oxigênio
+                    para serem ligados. Então podemos usar a ligação dativa. A fórmula estrutural ficaria:
+                </p>
+                <div class="figura-container-reduzida">
+                    <img class="zoomable fundo-transparente"
+                        src="https://res.cloudinary.com/di4ria1pf/image/upload/v1765764439/figura_5_sn2_xtenvj.png" alt="">
+                </div>
+                <p>
+                    Pode parecer confuso no começo, mas com a prática, rapidamente você conseguirá determinar como são
+                    ligados os átomos na ligação covalente.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- Seção Conclusão -->
+    <section id="conclusao" class="conclusao">
+        <!-- Conteúdo -->
+        <div class="conteudo-conclusao">
+            <div class="caixa-texto">
+                <h1 class="titulo-conclusao">CONCLUSÃO</h1>
+                <p>
+                    Chegando até aqui, você já viu que os átomos não se ligam por acaso. Existe uma lógica por trás dessas
+                    interações, baseada na busca pela estabilidade eletrônica. Aprendemos a identificar os tipos de ligação e como
+                    elas influenciam na formação e nas características das substâncias. A regra do octeto, a distribuição eletrônica
+                    e os diferentes tipos de fórmulas foram instrumentos que nos ajudaram a compreender essa dinâmica.
+                </p>
+                <p>
+                    Mais do que decorar fórmulas, o importante agora é perceber como esse conhecimento se aplica em
+                    diversos contextos, dos sais aos metais, das moléculas simples aos compostos mais complexos. As
+                    ligações químicas explicam muito do que está à nossa volta e também nos preparam para estudos mais
+                    aprofundados em química. Que tal seguir observando como esses conceitos aparecem na prática? Isso
+                    pode tornar tudo mais claro e interessante.
+                </p>
+    
+            </div>
+        </div>
+        <div id="download" class="download-section">
+            <a href="https://drive.google.com/uc?export=download&id=1MP_x4Zw3goq7CeB6qSRp3czGkgRhj3--" class="download-btn">
+                Baixar PDF <i class="fas fa-download"></i> <!-- Ícone de download -->
+            </a>
+        </div>
+    </section>
+<!-- Seção Referências -->
+<section id="referencias" class="referencias">
+    <!-- Conteúdo -->
+    <div class="conteudo-referencias">
+        <div class="caixa-texto">
+            <h1 class="titulo-referencias">REFERÊNCIAS</h1>
+
+            <p>BATISTA, C. <strong>Ligações Químicas.</strong> Toda Matéria.
+                Disponível em:
+                <a href="https://www.todamateria.com.br/ligacoes-quimicas/" target="_blank">
+                    https://www.todamateria.com.br/ligacoes-quimicas/
+                </a>.
+                Acesso em: 05 ago. 2025.
+            </p>
+
+            <p>BOTH, Josemere. <strong>Química geral e inorgânica.</strong> Porto Alegre: SAGAH, 2018.
+                E-book. p.129. ISBN 9788595026803. Disponível na Minha Biblioteca.
+                Acesso em: 18 jul. 2025.
+            </p>
+
+            <p>CHANG, Raymond. <strong>Química geral.</strong> 4. ed. Porto Alegre: ArtMed, 2010.
+                E-book. p.219. ISBN 9788563308177. Disponível na Minha Biblioteca.
+                Acesso em: 18 jul. 2025.
+            </p>
+
+            <p>KOTZ, John C.; TREICHEL, Paul M.; TOWNSEND, John R.; ET AL.
+                <strong>Química Geral e Reações Químicas v.1.</strong> 4. ed. Porto Alegre:
+                +A Educação - Cengage Learning Brasil, 2023. E-book. p.279. ISBN 9786555584516.
+                Disponível na Minha Biblioteca. Acesso em: 18 jul. 2025.
+            </p>
+
+            <p>ROZENBERG, Izrael M. <strong>Química geral.</strong> São Paulo: Editora Blucher, 2002.
+                E-book. p.1. ISBN 9788521215646. Disponível na Minha Biblioteca.
+                Acesso em: 28 jul. 2025.
+            </p>
+
+        </div>
+    </div>
+</section>
+    <!-- Seção com os créditos e ficha técnica -->
+    <section class="ficha-tecnica">
+        <p>CASA NOSSA SENHORA DA PAZ – AÇÃO SOCIAL FRANCISCANA, PROVÍNCIA FRANCISCANA DA <br>
+            IMACULADA CONCEIÇÃO DO BRASIL – ORDEM DOS FRADES MENORES</p>
+        <br>
+        <p><strong>GESTOR DO CENTRO DE INOVAÇÃO E SOLUÇÕES EDUCACIONAIS - CISE</strong>
+            Franklin Portela Correia</p>
+    
+        <p><strong>COORDENADORA DO PROGRAMA DE ATUALIZAÇÃO</strong>
+            Flávia Cristina Franco de Lima Rosa</p>
+    
+        <p><strong>SUPERVISORA EDUCACIONAL</strong>
+            Juliane Cristine Batista</p>
+    
+        <p><strong>DESIGNER INSTRUCIONAL</strong>
+            Ana Angelica Miranda Ramos</p>
+    
+        <p><strong>PROJETO GRÁFICO</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DIAGRAMADORES</strong>
+            Andréa Calegari<br>
+            Lucas Ichimaru Testa</p>
+    
+        <p><strong>DESENVOLVEDOR</strong>
+            Pedro Vinicius Pires de Oliveira Dias</p>
+    
+        <p><strong>PRODUTOR AUDIOVISUAL</strong>
+            Cassio Martins de Carvalho</p>
+    
+        <p><strong>EDIÇÃO DE VÍDEOS</strong>
+            Diogo Lefort Silva<br>
+            Rafael da Silva Oliveira<br>
+            Hugo Henrique Ferreira da Silva</p>
+    
+        <br><br>
+        <p><span class="paragraforeduzido">
+                © 2026 Universidade São Francisco<br>
+                Avenida São Francisco de Assis, 218<br>
+                CEP 12916-900 – Bragança Paulista/SP
+        </p></span>
+    </section>
+    <footer class="footer">
+        <p>Copyright © de Universidade São Francisco</p>
+        <hr class="footer-divider">
+        <span class="fonte-menor">Todos os direitos reservados. Este ebook ou
+            qualquer parte dele não pode ser reproduzido ou usado em quaisquer formas (eletrônico,
+            gravação, fotocópia, distribuição pela Internet ou outros) sem autorização
+            expressa, por escrito, da <strong>Universidade São Francisco.</strong></span>
+    </footer>
+
+    <script>
+        // Navbar
+            document.querySelector('.menu-toggle').addEventListener('click', () => {
+                const menu = document.querySelector('.navbar ul');
+                const icons = document.querySelectorAll('.menu-toggle i'); // Seleciona ambos os ícones
+
+                menu.classList.toggle('show'); // Alterna a visibilidade do menu
+
+                // Alterna entre o ícone de abrir (menu) e o ícone de fechar (x)
+                icons[0].style.display = icons[0].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de menu
+                icons[1].style.display = icons[1].style.display === 'none' ? 'block' : 'none'; // Mostra ou esconde o ícone de fechar
+            });
+            // Fechar o menu ao clicar em um link
+            const links = document.querySelectorAll('.navbar ul li a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    const menu = document.querySelector('.navbar ul');
+                    const icons = document.querySelectorAll('.menu-toggle i');
+
+                    // Fecha o menu ao clicar no link
+                    menu.classList.remove('show');
+                    icons[0].style.display = 'block'; // Exibe o ícone de menu
+                    icons[1].style.display = 'none'; // Esconde o ícone de fechar
+                });
+            });
+            // Captura o elemento navbar
+            const navbar = document.querySelector('.navbar');
+
+            // Função que altera a opacidade da navbar
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) { // Quando o scroll for maior que 50px
+                    navbar.style.backgroundColor = 'rgba(159, 67, 190, 0.8)'; // Opacidade 80%
+                } else {
+                    navbar.style.backgroundColor = '#9F43BE'; // Cor original sem transparência
+                }
+            });
+
+            function abrirModal(src) {
+                document.getElementById('imagem-ampliada').src = src;
+                document.getElementById('modal-imagem').classList.add('ativo');
+                atualizarContador();
+                atualizarPontos();
+            }
+
+            function fecharModal() {
+                document.getElementById('modal-imagem').classList.remove('ativo');
+            }
+
+            function navegarModal(direcao) {
+                indiceModal = (indiceModal + direcao + imagensModal.length) % imagensModal.length;
+                document.getElementById('imagem-ampliada').src = imagensModal[indiceModal];
+                atualizarContador();
+                atualizarPontos();
+            }
+
+            function atualizarContador() {
+                document.getElementById('contador-modal').textContent = `${indiceModal + 1} / ${imagensModal.length}`;
+            }
+
+            function atualizarPontos() {
+                const container = document.getElementById('pontos-modal');
+                container.innerHTML = '';
+                imagensModal.forEach((_, i) => {
+                    const ponto = document.createElement('span');
+                    if (i === indiceModal) ponto.classList.add('ativo');
+                    ponto.addEventListener('click', () => {
+                        indiceModal = i;
+                        document.getElementById('imagem-ampliada').src = imagensModal[i];
+                        atualizarContador();
+                        atualizarPontos();
+                    });
+                    container.appendChild(ponto);
+                });
+            }
+
+            // Cria o container lightbox
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            document.body.appendChild(lightbox);
+
+            let scale = 1; // nível de zoom
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            document.querySelectorAll(".zoomable").forEach(img => {
+                img.addEventListener("click", () => {
+                    const imgClone = document.createElement("img");
+                    imgClone.src = img.src;
+                    imgClone.alt = img.alt;
+                    imgClone.style.objectFit = "contain"; // garante que abre ajustada
+                    imgClone.style.maxWidth = "100%";
+                    imgClone.style.maxHeight = "100%";
+
+                    lightbox.innerHTML = "";
+                    lightbox.appendChild(imgClone);
+                    lightbox.style.display = "flex";
+                    scale = 1;
+                    translateX = translateY = 0;
+                    updateTransform(imgClone);
+
+                    // Mensagem de dica
+                    const hint = document.createElement("div");
+                    hint.classList.add("lightbox-hint");
+                    hint.innerText = "Use a roda do mouse para dar zoom e arraste para mover";
+                    lightbox.appendChild(hint);
+
+                    // Remove a dica após 4s
+                    setTimeout(() => {
+                        if (hint && hint.parentNode) {
+                            hint.remove();
+                        }
+                    }, 4000);
+
+                    // Zoom com scroll
+                    imgClone.addEventListener("wheel", e => {
+                        e.preventDefault();
+                        scale += e.deltaY * -0.001;
+                        scale = Math.min(Math.max(1, scale), 5); // limite de zoom
+                        updateTransform(imgClone);
+                    });
+
+                    // Arrastar imagem
+                    imgClone.addEventListener("mousedown", e => {
+                        isDragging = true;
+                        startX = e.clientX - translateX;
+                        startY = e.clientY - translateY;
+                        lightbox.style.cursor = "grabbing";
+                    });
+
+                    window.addEventListener("mousemove", e => {
+                        if (!isDragging) return;
+                        translateX = e.clientX - startX;
+                        translateY = e.clientY - startY;
+                        updateTransform(imgClone);
+                    });
+
+                    window.addEventListener("mouseup", () => {
+                        isDragging = false;
+                        lightbox.style.cursor = "grab";
+                    });
+                });
+            });
+
+            // Fecha clicando fora da imagem
+            lightbox.addEventListener("click", e => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            // Função para aplicar zoom + movimento
+            function updateTransform(img) {
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            }
+        document.querySelectorAll('.slider-texto-container').forEach(initSliderTexto);
+
+            function initSliderTexto(container) {
+                const slides = container.querySelectorAll('.slide-texto');
+                const indicatorsContainer = container.querySelector('.slider-texto-indicadores');
+
+                indicatorsContainer.innerHTML = ''; // Limpa indicadores anteriores
+
+                // Cria os dots dinamicamente
+                slides.forEach((_, index) => {
+                    const dot = document.createElement('span');
+                    dot.classList.add('dot-texto');
+                    dot.onclick = () => mostrarSlide(index);
+                    indicatorsContainer.appendChild(dot);
+                });
+
+                const dots = container.querySelectorAll('.dot-texto');
+                let currentIndex = 0;
+
+                function mostrarSlide(index) {
+                    slides.forEach(slide => slide.classList.remove('ativo'));
+                    dots.forEach(dot => dot.classList.remove('ativo'));
+
+                    currentIndex = (index + slides.length) % slides.length;
+
+                    slides[currentIndex].classList.add('ativo');
+                    dots[currentIndex].classList.add('ativo');
+                }
+
+                // Armazena a função no container para chamadas externas
+                container.mostrarSlideTexto = mostrarSlide;
+                container.getCurrentIndex = () => currentIndex;
+                mostrarSlide(0);
+            }
+
+            // Chamado pelos botões de seta
+            function mudarSlideTexto(button, direcao) {
+                const container = button.closest('.slider-texto-container');
+                const currentIndex = container.getCurrentIndex();
+                container.mostrarSlideTexto(currentIndex + direcao);
+            }
+
+            // Chamado pelos dots (não necessário, mas deixado por compatibilidade)
+            function irParaSlideTexto(dot, index) {
+                const container = dot.closest('.slider-texto-container');
+                container.mostrarSlideTexto(index);
+            }
+
+        document.querySelectorAll('.acordeon-header, .acordeon-headerb, .acordeon-headerc, .acordeon-headerd').forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const isVisible = content.style.display === 'block';
+                    content.style.display = isVisible ? 'none' : 'block';
+                    const icon = header.querySelector('.acordeon-icon');
+                    if (icon) {
+                        icon.classList.toggle('bx-chevron-up', !isVisible);
+                        icon.classList.toggle('bx-chevron-down', isVisible);
+                    }
+                });
+            });
+
+             // Função para abrir o modal com o vídeo
+                function openVideoModal(element) {
+                    var videoModal = document.getElementById('videoModal');
+                    var iframe = document.getElementById('videoIframe');
+
+                    // Obtém o link do vídeo do atributo 'data-video' do ícone de play clicado
+                    var videoLink = element.getAttribute("data-video");
+
+                    // Define o src do iframe com o link do vídeo
+                    iframe.src = videoLink;
+
+                    // Exibe o modal
+                    videoModal.style.display = "flex";
+                }
+
+                // Função para fechar o modal
+                function closeVideoModal() {
+                    var videoModal = document.getElementById('videoModal');
+                    var iframe = document.getElementById('videoIframe');
+
+                    // Limpa o vídeo (remove a URL para evitar que o vídeo continue tocando)
+                    iframe.src = "";
+                    videoModal.style.display = "none";  // Fecha o modal
+                }
+
+                // Impede o fechamento do modal quando o clique for dentro do modal de vídeo
+                document.getElementById('videoModal').addEventListener('click', function (event) {
+                    // Apenas fecha o modal se o clique for fora da área de conteúdo (ou seja, na área preta)
+                    if (event.target === this) {
+                        closeVideoModal();
+                    }
+                });
+
+                (function () {
+                    function applyNoWrapToMathNodes(wrapper) {
+                        // aplica estilo direto (por segurança) nos nós inseridos pelo MathJax
+                        wrapper.querySelectorAll('mjx-container, .MathJax, .mjx-chtml, .MathJax_SVG').forEach(n => {
+                            n.style.display = 'inline-block';
+                            n.style.whiteSpace = 'nowrap';
+                            n.style.maxWidth = 'none';
+                            n.style.overflow = 'visible';
+                        });
+                    }
+
+                    function onMathReady() {
+                        document.querySelectorAll('.math-mobile-scroll').forEach(wrapper => {
+                            applyNoWrapToMathNodes(wrapper);
+                            // opcional: reset do scroll para esquerda (evita estar deslocado)
+                            wrapper.scrollLeft = 0;
+
+                            // observe inserções (caso MathJax re-renderize)
+                            if (!wrapper._mathObserver) {
+                                const mo = new MutationObserver(muts => {
+                                    applyNoWrapToMathNodes(wrapper);
+                                });
+                                mo.observe(wrapper, { childList: true, subtree: true });
+                                wrapper._mathObserver = mo;
+                            }
+                        });
+                    }
+
+                    // Tenta detectar MathJax v3/v2 e executar no momento correto
+                    if (window.MathJax) {
+                        // v3
+                        if (MathJax.typesetPromise) {
+                            // se já carregado, roda uma vez
+                            MathJax.typesetPromise().then(onMathReady).catch(() => onMathReady());
+                            // e observa globalmente (caso novos typesets ocorram)
+                            const orig = MathJax.typesetPromise.bind(MathJax);
+                            MathJax.typesetPromise = function () {
+                                return orig.apply(null, arguments).then(res => { onMathReady(); return res; });
+                            };
+                        } else if (MathJax.Hub) {
+                            // v2
+                            MathJax.Hub.Queue(function () { onMathReady(); });
+                            MathJax.Hub.Register.MessageHook("End Typeset", function () { onMathReady(); });
+                        } else {
+                            // fallback
+                            setTimeout(onMathReady, 300);
+                        }
+                    } else {
+                        // sem MathJax ainda: roda ao DOMContentLoaded e aguarda futuras inserções
+                        document.addEventListener('DOMContentLoaded', function () {
+                            setTimeout(onMathReady, 300);
+                        });
+                    }
+                })();
+    </script>
+</body>
+</html>
